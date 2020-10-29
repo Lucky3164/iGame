@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>热门评测_热门游戏评测</title>
+    <meta name="Keywords" content="精品原创,游戏评测,深度解析,横向对比">
+    <meta name="Description" content="3DM原创专栏致力于游戏文化，通过深度、趣味的方式，让玩家了解游戏中鲜为人知的故事，获取更广泛的游戏知识，开拓一个全新的游戏世界大门。">
+    <th:block th:include="~{/common/public_common::common_head}"></th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dj_base-2008259.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dj_common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/zl-style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/yc_list2.css}">
+</head>
+<body>
+<div th:replace="~{/common/public_common::header_wrap(pageUrl='article')}"></div>
+<div class="content clear">
+    <div class="crumb">
+        <i></i>您的位置：
+        <a href="index13.html" target="_blank">单机</a> >
+        <a href="original.html" target="_blank">原创</a> >
+        <a>游戏评测</a>
+    </div>
+    <div class="top_nav ">
+        <a href="index24.html">最新原创</a>
+        <a class="as">游戏评测</a>
+        <a href="index25.html">观点投票</a>
+        <a href="index26.html">专栏</a>
+        <a href="index27.html">节目</a>
+    </div>
+    <div class="Content_L">
+        <div class="yc_warp_list">
+            <ul>
+                <th:block th:each="article:${page.list}">
+                    <li class="listb selectpost">
+                        <div class="bt">
+                            <a th:href="@{/article/details/{aid}(aid=${article.articleId})}" target="_blank" class="a_bt selectarcpost"
+                               th:text="${article.title}">《不思议的皇冠》评测：策略和大局观比运气更重要</a>
+                        </div>
+                        <div class="net">
+                            <a class="img" th:href="@{/article/details/{aid}(aid=${article.articleId})}" target="_blank">
+                                <img th:src="${article.articleCover}">
+                            </a>
+                            <div class="text">
+                                <div class="p">
+                                    <p th:text="${article.outline}">风来的西林，不思议的皇冠。</p>
+                                    <a class="font" th:if="${article.game.aveScore != null}" th:text="${#numbers.formatDecimal(article.game.aveScore, 0, 1)}">8.0</a>
+                                    <a class="font" th:if="${article.game.aveScore == null}" th:text="0.0">8.0</a>
+                                </div>
+                                <div class="btn_list">
+                                    <div class="time"><i></i>[[${#dates.format(article.upDate, 'yyyy-MM-dd HH:mm')}]]</div>
+<!--                                    <a class="pl"><i></i><span class="selectarcnum">0</span></a>-->
+                                    <a class="name"><i></i>[[${article.user.userName}]]</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </th:block>
+
+
+            </ul>
+        </div>
+        <div th:replace="~{/common/public_common::pagewrap(pageInfo=${page}, pageURL=${pageUrl})}"></div>
+    </div>
+    <div class="Content_R">
+        <div class="R_list1">
+            <div class="QZ_title title_R">
+                <div>
+                    <span><i class="ico15"></i>作者热评文章</span>
+                    <a href="original.html" target="_blank" class="mor2">更多<i>+</i></a>
+                </div>
+                <div class="lin"></div>
+            </div>
+            <div class="lis selectpost">
+                <a href="3742638.html" target="_blank" class="img">
+                    <img th:src="@{/picture/cover/default.png}"></a>
+                <a href="3742638.html" target="_blank" class="bt selectarcpost">不要点我！还没实现！</a>
+                <div class="info">
+                    <p class="time"><i></i>10-16</p>
+                    <a class="num"><i></i><span class="selectarcnum">0</span></a>
+                </div>
+            </div>
+            <div class="lis selectpost">
+                <a href="3742636.html" target="_blank" class="img">
+                    <img th:src="@{/picture/cover/default.png}"></a>
+                <a href="3742636.html" target="_blank" class="bt selectarcpost">不要点我！还没实现！</a>
+                <div class="info">
+                    <p class="time"><i></i>10-16</p>
+                    <a class="num"><i></i><span class="selectarcnum">0</span></a>
+                </div>
+            </div>
+            <div class="lis selectpost">
+                <a href="3742634.html" target="_blank" class="img">
+                    <img th:src="@{/picture/cover/default.png}"></a>
+                <a href="3742634.html" target="_blank" class="bt selectarcpost">不要点我！还没实现！</a>
+                <div class="info">
+                    <p class="time"><i></i>10-13</p>
+                    <a class="num"><i></i><span class="selectarcnum">0</span></a>
+                </div>
+            </div>
+            <div class="lis selectpost">
+                <a href="3742633.html" target="_blank" class="img">
+                    <img th:src="@{/picture/cover/default.png}"></a>
+                <a href="3742633.html" target="_blank" class="bt selectarcpost">不要点我！还没实现！</a>
+                <div class="info">
+                    <p class="time"><i></i>10-15</p>
+                    <a class="num"><i></i><span class="selectarcnum">0</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="R_list_bq">
+            <div class="QZ_title title_R">
+                <div>
+                    <span><i class="ico_bq"></i>热门标签</span>
+                    <a href="original.html" target="_blank" class="mor2">更多<i>+</i></a>
+                </div>
+                <div class="lin"></div>
+            </div>
+            <div class="item">
+                <a href="index36.html" target="_blank">
+                    <img th:src="@{/picture/1531899043_759979.jpg}">
+                    <div class="ico_motai">
+                        <div class="ico_z"></div>
+                        <p>一周话题</p>
+                    </div>
+                </a>
+                <a href="index37.html" target="_blank">
+                    <img th:src="@{/picture/1546347700_336575.jpg}">
+                    <div class="ico_motai">
+                        <div class="ico_z"></div>
+                        <p>游史以来</p>
+                    </div>
+                </a>
+            </div>
+            <div class="list_a">
+                <a href="index37.html" target="_blank">游史以来</a>
+                <a href="index38.html" target="_blank">事件</a>
+                <a href="index39.html" target="_blank">文化</a>
+                <a href="index40.html" target="_blank">怀旧</a>
+                <a href="index41.html" target="_blank">人物</a>
+                <a href="index42.html" target="_blank">推游</a>
+                <a href="index43.html" target="_blank">为什么</a>
+                <a href="index44.html" target="_blank">新鲜事</a>
+                <a href="index45.html" target="_blank">脑洞</a>
+                <a href="index46.html" target="_blank">妈说</a>
+                <a href="index47.html" target="_blank">开黑日常</a>
+                <a href="index48.html" target="_blank">游系列传</a>
+                <a href="index49.html" target="_blank">考据</a>
+                <a href="index50.html" target="_blank">游戏的人</a>
+                <a href="index51.html" target="_blank">3言两语</a>
+                <a href="index52.html" target="_blank">作为</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{/common/public_common::fotter}"></div>
+<script th:src="@{/js/common-2008252.js}"></script>
+<!--<script src="static/js/user-08251.js"></script>-->
+<!--<script src="static/js/TCaptcha.js"></script>-->
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+<script type="text/javascript" th:src="@{/js/commentlist.js}"></script>
+</body>
+</html>

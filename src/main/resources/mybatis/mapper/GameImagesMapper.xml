@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.GameImagesMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.GameImages">
+    <id column="image_id" jdbcType="INTEGER" property="imageId" />
+    <result column="image_path" jdbcType="VARCHAR" property="imagePath" />
+    <result column="game_id" jdbcType="INTEGER" property="gameId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_images
+    where image_id = #{imageId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.igame.entity.GameImages">
+    insert into tb_images (image_id, image_path, game_id
+      )
+    values (#{imageId,jdbcType=INTEGER}, #{imagePath,jdbcType=VARCHAR}, #{gameId,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.igame.entity.GameImages">
+    update tb_images
+    set image_path = #{imagePath,jdbcType=VARCHAR},
+      game_id = #{gameId,jdbcType=INTEGER}
+    where image_id = #{imageId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select image_id, image_path, game_id
+    from tb_images
+    where image_id = #{imageId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select image_id, image_path, game_id
+    from tb_images
+  </select>
+  <select id="selectByGameId" resultMap="BaseResultMap">
+    select image_id, image_path, game_id
+    from tb_images
+    where game_id=#{gameId,jdbcType=INTEGER}
+  </select>
+</mapper>

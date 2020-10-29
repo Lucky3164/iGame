@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.CommentMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.Comment">
+    <id column="comment_id" jdbcType="INTEGER" property="commentId" />
+    <result column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="game_id" jdbcType="INTEGER" property="gameId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="parent_id" jdbcType="INTEGER" property="parentId" />
+    <result column="reply_id" jdbcType="INTEGER" property="replyId" />
+    <result column="comment_state" jdbcType="INTEGER" property="commentState" />
+    <result column="comment_date" jdbcType="TIMESTAMP" property="commentDate" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+
+    <association property="commentUser" select="com.igame.mapper.UserMapper.selectByPrimaryKey"
+                 column="user_id">
+    </association>
+  </resultMap>
+  <resultMap id="ListBaseResultMap" type="list">
+
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_comment
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.igame.entity.Comment">
+    insert into tb_comment (article_id, game_id,
+      user_id, parent_id, reply_id,
+      content
+      )
+    values (#{articleId,jdbcType=INTEGER}, #{gameId,jdbcType=INTEGER},
+      #{userId,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, #{replyId,jdbcType=INTEGER},
+    #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.igame.entity.Comment">
+    update tb_comment
+    set article_id = #{articleId,jdbcType=INTEGER},
+      game_id = #{gameId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      parent_id = #{parentId,jdbcType=INTEGER},
+      reply_id = #{replyId,jdbcType=INTEGER},
+      comment_state = #{commentState,jdbcType=INTEGER},
+      comment_date = #{commentDate,jdbcType=TIMESTAMP},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select comment_id, article_id, game_id, user_id, parent_id, reply_id, comment_state,
+    comment_date, content
+    from tb_comment
+    where comment_id = #{commentId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select comment_id, article_id, game_id, user_id, parent_id, reply_id, comment_state,
+    comment_date, content
+    from tb_comment
+    order by comment_date
+  </select>
+  <select id="selectByUserId" resultMap="BaseResultMap">
+    select comment_id, article_id, game_id, user_id, parent_id, reply_id, comment_state,
+    comment_date, content
+    from tb_comment
+    where user_id = #{userId,jdbcType=INTEGER}
+    order by comment_date
+  </select>
+  <select id="selectByParentId" resultMap="BaseResultMap">
+    select comment_id, article_id, game_id, user_id, parent_id, reply_id, comment_state,
+    comment_date, content
+    from tb_comment
+    where parent_id = #{parentId,jdbcType=INTEGER}
+    AND reply_id IS NOT NULL
+    order by comment_date
+  </select>
+  <select id="selectByReplyId" resultMap="BaseResultMap">
+    SELECT comment_id, article_id, game_id, user_id, parent_id, reply_id, comment_state,
+    comment_date, content
+    FROM tb_comment
+    WHERE parent_id = #{parentId,jdbcType=INTEGER}
+	AND reply_id IS NOT NULL
+    ORDER BY comment_date
+  </select>
+  <select id="selectLastCommentId" resultType="java.lang.Integer" >
+    SELECT comment_id
+    FROM tb_comment
+    ORDER BY comment_id DESC
+    LIMIT 1
+  </select>
+  <select id="selectCommentCountByGameId" resultType="java.lang.Integer">
+    SELECT COUNT(*)
+    FROM tb_comment
+    WHERE game_id=#{gameId,jdbcType=INTEGER}
+  </select>
+
+<!--  <select id="selectByArticleId" resultMap="" >-->
+<!--    select distinct parent_id-->
+<!--    from tb_comment-->
+<!--    where article_id = #{articleId,jdbcType=INTEGER}-->
+<!--    group by parent_id-->
+<!--    order by comment_date-->
+<!--  </select>-->
+</mapper>

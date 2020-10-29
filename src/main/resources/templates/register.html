@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>注册</title>
+    <link rel="stylesheet" href="" th:href="@{/css/base-201908291.css}">
+    <!--        <script src="" th:href="@{/webjars/jquery/3.3.1/jquery.js}"></script>-->
+    <div th:replace="~{/common/public_common::public_head}"></div>
+</head>
+<body>
+<div class="header_wrap">
+    <div class="header_top">
+        <div class="center">
+            <a href="" th:href="@{/}" class="head_top_le">
+                <i></i>
+                <span>iGame.com</span>
+            </a>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="" th:href="@{/css/login.css}">
+<div class="registered_wrap">
+    <div class="title">3DM 欢迎新人加入</div>
+    <div class="infowrap">
+        <form id="register" action="" method="post" th:action="@{/register}">
+            <!--					<input type="hidden" name="_csrf" value="I-yz6qSpAmK60vW_VswRd3rWG1pkTVSIc7U1I6iI-8FEhPG61M9TJOirguc_iVcUEI4iFzQnOfwpxVZN3fCo8Q==">-->
+            <!--					<input type="hidden" id="myreferurl" name="refer" value="https://my.3dmgame.com/register">-->
+            <div class="input_lis">
+                <span>手机号:</span>
+                <input value="" required="required" autocomplete="off"
+                       class="mobile" type="text" name="phoneNumber" id="mobile" placeholder="请输入手机号">
+            </div>
+            <div class="input_lis">
+                <span>用户名:</span>
+                <input value="" required="required" autocomplete="off"
+                       class="mobile" type="text" name="userName" id="userName" placeholder="请输入用户名">
+            </div>
+            <div class="input_lis">
+                <span>密码:</span>
+                <input value="" required="required" autocomplete="off" title="别忘了密码"
+                       class="passwd" type="password" name="password" id="passwd" placeholder="请输入密码（6-18位字母、数字、符号）">
+            </div>
+            <div class="input_lis">
+                <span>确认密码:</span>
+                <input value="" required="required" autocomplete="off" title="别忘了密码"
+                       class="checkpasswd" type="password" name="checkPassword" id="checkpasswd" placeholder="再次输入密码">
+            </div>
+            <div class="input_lis yzm_inp">
+                <span>验证码:</span>
+                <input value="" required="required" type="text" class="yzm-c" maxlength="16" name="validate"
+                       id="validate" placeholder="输入验证码">
+                <div class="time " id="TencentCaptcha" data-appid="2072025837"
+                     data-cbfn="callback_regcaptcha">获取验证码
+                </div>
+            </div>
+            <div class="tips">
+                收不到验证码？<span class="feedback">去反馈</span>
+            </div>
+            <div class="submit_wrap">
+                <span class="submit" onclick="reg_submit()">注 册</span>
+            </div>
+            <div class="rule_wrap">
+                <input type="radio" name="" checked="checked" id="rule" value="">
+                <label for="rule">我已同意</label>
+                <a href="agreement.html" target="_blank">《3DM账号协议》</a>
+                <div class="btn_ico2"></div>
+                <div class="tips_login">
+                    已有账号？<a id="login2" href="" th:href="@{/login}">去登录</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div th:replace="~{/user/common/userInfo_common::fotter}"></div>
+<script src="static/js/base.js" th:src="@{/js/base.js}"></script>
+<script src="static/js/layer.js" th:src="@{/webjars/layer/dist/layer.js}"></script>
+<script src="static/js/reg.js" th:src="@{/js/reg.js}"></script>
+</body>
+</html>

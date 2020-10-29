@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <title>搜索</title>
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+
+    <th:block th:include="~{/common/public_common::common_head}">
+    </th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/base-0508.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/search-0403.css}">
+
+</head>
+<body>
+<div class="header_wrap">
+    <div th:replace="~{/common/public_common::header_top}"></div>
+</div>
+<div class="search_head">
+    <div class="search_top">
+        <a th:href="@{/}" class="logo"><img th:src="@{/picture/logo1.png}"></a>
+        <form action="/" method="post">
+            <div class="search_panel search_box">
+                <input type="hidden" value="1" name="type" id="type">
+                <input type="text" class="keys" id="ss" maxlength="95" size="35" name="keyword" value="使命召唤">
+                <input type="hidden" name="subsearch" value="1">
+                <button type="submit" class="search_btn">搜 索</button>
+            </div>
+        </form>
+    </div>
+    <div class="search_nav">
+        <div class="item">
+            <a href="javascript:;" class="on">单机</a>
+            <a href="javascript:;">手游</a>
+            <a href="javascript:;">网游</a>
+            <a href="javascript:;">自运营</a>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="search_wrap">
+        <div class="search_title"><i></i>
+            <p>单机专区</p>
+            <div class="sech_top"><p>为您找到 <span>21</span> 条搜索结果，如下： </p></div>
+        </div>
+        <div class="search_lis lis_djzq">
+            <a href="javascript:;" class="bt" target="_blank"><em>使命</em><em>召唤</em></a>
+            <a href="javascript:;" class="img" target="_blank"><img src="static/picture/1532069871_909679.jpg"></a>
+            <ul class="info">
+                <li>
+                    <p>类型：第一人称射击</p>
+                    <p>语言：简中 | 英文</p>
+                </li>
+                <li>
+                    <p>更新：2019-08-12</p>
+                    <p>平台：PC</p>
+                </li>
+                <li>
+                    <a href="javascript:;" target="_blank">https://www.3dmgame.com/games/cod/</a>
+                    <span>2003-10-29</span>
+                </li>
+            </ul>
+        </div>
+        <div class="pagewrap">
+            <div id="kkpager"></div>
+        </div>
+        <script src="static/js/pager.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                kkpager.generPageHtml({
+                    pno: 1,
+                    total: 2,
+                    totalRecords: '21',
+                    hrefFormer: 'https://so.3dmgame.com/',
+                    //链接尾部
+                    hrefLatter: '?keyword=使命召唤&type=1',
+                    getLink: function (n) {
+                        return this.hrefFormer + this.hrefLatter + "&page=" + n;
+                    },
+                    lang: {
+                        prePageText: '<',
+                        prePageTipText: '<',
+                        nextPageText: '>',
+                        nextPageTipText: '>'
+                    },
+                    mode: 'link',//默认值是link，可选link或者click
+                    click: function (n) {
+                        //this.selectPage(n);
+                        return false;
+                    }
+                });
+            });
+        </script>
+    </div>
+    <div class="R_search_item">
+        <div class="dj_warp_e mg_bt30">
+            <div class="QZ_title title_R">
+                <div>
+                    <span><i class="ico8"></i>3DM自运营游戏推荐</span>
+                    <a href="javascript:;" target="_blank" class="mor2">更多<i>+</i></a>
+                </div>
+                <div class="lin"></div>
+            </div>
+            <ul>
+                <li class="li1 m_left">
+                    <div class="showin">
+                        <a href="javascript:;" target="_blank">开始游戏</a>
+                    </div>
+                    <div class="li1bj"><img src="static/picture/1598234440_256528.jpg"></div>
+                    <p>裁决战歌</p>
+                </li>
+                <li class="li1">
+                    <div class="showin">
+                        <a href="javascript:;" target="_blank">开始游戏</a>
+                    </div>
+                    <div class="li1bj"><img src="static/picture/1600322239_853884.png"></div>
+                    <p>三国群英传</p>
+                </li>
+
+                <li class="li3">
+                    <div class="imgbox">
+                        <img src="static/picture/1602489858_166628.png" class="img">
+                        <div class="btnbox">
+                            <a href="javascript:;" target="_blank" class="tab tab1">安卓下载
+                                <div class="sao"><img src="static/picture/1601362421_456671.png"></div>
+                            </a>
+                            <a href="javascript:;" class="tab tab2">进入官网</a>
+                        </div>
+                    </div>
+                    <p>街头足球</p>
+                </li>
+                <li class="li3">
+                    <div class="imgbox">
+                        <img src="static/picture/1597050355_983742.png" class="img">
+                        <div class="btnbox">
+                            <a href="javascript:;" target="_blank" class="tab tab1">安卓下载
+                                <div class="sao"><img src="static/picture/1597113914_266639.png"></div>
+                            </a>
+                            <a href="javascript:;" class="tab tab2">进入官网</a>
+                        </div>
+                    </div>
+                    <p>校花的贴身高手</p>
+                </li>
+                <li class="li3">
+                    <div class="imgbox">
+                        <img src="static/picture/1600066498_682878.png" class="img">
+                        <div class="btnbox">
+                            <a href="javascript:;" target="_blank" class="tab tab1">安卓下载
+                                <div class="sao"><img src="static/picture/1600067007_586874.png"></div>
+                            </a>
+                            <a href="javascript:;" class="tab tab2">进入官网</a>
+                        </div>
+                    </div>
+                    <p>百鬼物语</p>
+                </li>
+
+                <li class="li3">
+                    <div class="imgbox">
+                        <img src="static/picture/1599103265_653089.png" class="img">
+                        <div class="btnbox">
+                            <a href="javascript:;" target="_blank" class="tab tab1">开始游戏
+                                <div class="sao"><img src="static/picture/1599787800_756358.png"></div>
+                            </a>
+                            <a href="javascript:;" class="tab tab2">进入官网</a>
+                        </div>
+                    </div>
+                    <p>乱斗之王</p>
+                </li>
+                <li class="li3">
+                    <div class="imgbox">
+                        <img src="static/picture/1600910782_774046.png" class="img">
+                        <div class="btnbox">
+                            <a href="javascript:;" target="_blank" class="tab tab1">开始游戏
+                                <div class="sao"><img src="static/picture/1600910907_732649.png"></div>
+                            </a>
+                            <a href="javascript:;" class="tab tab2">进入官网</a>
+                        </div>
+                    </div>
+                    <p>诛仙封神传</p>
+                </li>
+                <li class="li3">
+                    <div class="imgbox">
+                        <img src="static/picture/1574917536_621419.png" class="img">
+                        <div class="btnbox">
+                            <a href="javascript:;" target="_blank" class="tab tab1">开始游戏
+                                <div class="sao"><img src="static/picture/1577328491_722886.png"></div>
+                            </a>
+                            <a href="javascript:;" class="tab tab2">进入官网</a>
+                        </div>
+                    </div>
+                    <p>NBA英雄</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div th:replace="~{/common/public_common::fotter}"></div>
+<!--<script src="static/js/user-1019.js"></script>-->
+<!--<script src="static/js/TCaptcha.js"></script>-->
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+</body>
+</html>

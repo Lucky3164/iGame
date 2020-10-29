@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Common</title>
+</head>
+<body>
+
+<div class="header_top" th:fragment="header_top">
+    <div class="center">
+        <div class="ul_link">
+            <a href="https://www.3dmgame.com" th:href="@{/}" target="_blank"><i class="ico1"></i>主站</a>
+            <a href="https://shop.3dmgame.com" target="_blank"><i class="ico2"></i>商城</a>
+            <a href="https://bbs.3dmgame.com" target="_blank"><i class="ico3"></i>论坛</a>
+            <a href="https://www.3dmgame.com/app.html" target="_blank"><i class="ico4"></i>手机APP</a>
+            <a href="https://yx.3dmgame.com" target="_blank"><i class="ico5"></i>自运营</a>
+        </div>
+        <div class="head_top_rt">
+            <a href="" th:href="@{/user/personalInfo}" target="_blank" style="padding:0">
+                <img src="" th:src="@{/image/headPhoto/default.jpg}"/></a>
+            <span class="username">
+                    <a href="" th:href="@{/user/personalInfo}" target="_blank">[[${session.loginUser.userName}]]</a></span>
+            <div class="exitwrap">
+                <div class="txwrap">
+                    <a href="" th:href="@{/user/personalInfo}" target="_blank">
+                    <img src="" th:src="${session.loginUser.hImgPath}"/></a>
+                </div>
+                <div class="usname">
+                    <a href="" th:href="@{/user/personalInfo}" class="name" target="_blank">
+                        <span>[[${session.loginUser.userName}]]</span></a><a class="jf">积分：0</a></div>
+                <ul class="bq_list">
+                    <li><a href="" th:href="@{/user/personalInfo}">资料</a></li>
+                    <li><a >订单</a></li>
+                    <li><a href="" th:href="@{/user/comment}">评论</a></li>
+                    <li><a >收藏</a></li>
+                    <li><a >社交</a></li>
+                </ul>
+                <div class="exitbtn">
+                    <a href="javascript:void(0);" class="exit" onclick="logout_submit()">[退出]</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="info-top" th:fragment="info-top">
+    <div class="bg_img">
+        <img src="" th:src="@{/image/top_bg.jpg}"></div>
+    <div class="txwrap" id="tx_setting">
+        <img src="" th:src="${session.loginUser.hImgPath}">
+    </div>
+    <div class="txtwrap">
+        <div class="name">
+            <p>[[${session.loginUser.userName}]]</p>
+            <span class="boy"></span>
+        </div>
+        <div class="Interest">爱好游戏：</div>
+    </div>
+<!--    <div class="jf_warp">-->
+<!--        <a href="/integral/">-->
+<!--            <i></i>等级积分：<span id="myintegral">0</span>-->
+<!--        </a>-->
+<!--    </div>-->
+    <div class="tabwrap">
+        <a class="li" href="" th:href="${topURI=='comment'?'javascript:void(0);':'/user/comment'}" th:class="${topURI=='comment'?'li on':'li'}">评论</a>
+        <a class="li" href="/fans/">社交</a>
+        <a class="li" href="/orders/">订单</a>
+        <a class="li" href="/collection/">收藏</a>
+        <a class="li on" href="" th:href="${topURI=='info'?'javascript:void(0);':'/user/personalInfo'}" th:class="${topURI=='info'?'li on':'li'}">资料</a>
+    </div>
+</div>
+
+<div class="Cont_L" th:fragment="Cont_L">
+    <a href="" th:href="${Cont_LURI=='baseInfo'?'javascript:void(0);':'/user/personalInfo'}">
+        <p th:class="${Cont_LURI=='baseInfo'?'on':_}">基础资料</p>
+    </a>
+<!--    <a href="/integral/"><p>等级积分</p></a>-->
+    <a href="" th:href="${Cont_LURI=='upd_password'?'javascript:void(0);':'/user/updatePassword'}">
+        <p th:class="${Cont_LURI=='upd_password'?'on':_}">修改密码</p>
+    </a>
+<!--    <a href="/setting/binding"><p>账号绑定</p></a>-->
+<!--    <a href="/setting/chgmobile"><p>换绑手机</p></a>-->
+<!--    <a href="/setting/address"><p>收货地址</p></a>-->
+<!--    <a href="/setting/task"><p>任务系统</p></a>-->
+<!--    <a href="/setting/mytask"><p>我的任务</p></a>-->
+</div>
+
+<div class="fotter" th:fragment="fotter">
+    <div class="fotter-top clear">
+        <div class="center">
+            <div class="wrap">
+                <p>综合内容</p>
+                <ul>
+                    <li><a href="https://3c.3dmgame.com/" target="_blank">硬件设备</a></li>
+                    <li><a href="https://bbs.3dmgame.com/" target="_blank">游戏论坛</a></li>
+                    <li><a href="https://www.3dmgame.com/bagua/" target="_blank">娱乐频道</a></li>
+                    <li><a href="https://www.3dmgame.com/original.html" target="_blank">原创专栏</a></li>
+                    <li><a href="https://shop.3dmgame.com/" target="_blank">游戏商城</a></li>
+                    <li><a href="https://www.3dmgame.com/hanhua/" target="_blank">游戏汉化</a></li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <p>单机游戏</p>
+                <ul>
+                    <li><a href="https://dl.3dmgame.com/" target="_blank">游戏下载</a></li>
+                    <li><a href="https://dl.3dmgame.com/patch/" target="_blank">补丁MOD</a></li>
+                    <li><a href="https://www.3dmgame.com/gl/" target="_blank">原创攻略</a></li>
+                    <li><a href="https://www.3dmgame.com/games/ns_all_1/" target="_blank">Switch</a></li>
+                    <li><a href="https://www.3dmgame.com/games/ps4_all_1/" target="_blank">PS4</a></li>
+                    <li><a href="https://www.3dmgame.com/release/pc202010/" target="_blank">发售表</a></li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <p>手机游戏</p>
+                <ul>
+                    <li><a href="https://shouyou.3dmgame.com/android/" target="_blank">安卓游戏</a></li>
+                    <li><a href="https://shouyou.3dmgame.com/ios/" target="_blank">苹果游戏</a></li>
+                    <li><a href="https://shouyou.3dmgame.com/gl/" target="_blank">手游攻略</a></li>
+                    <li><a href="https://shouyou.3dmgame.com/ka/" target="_blank">手游礼包</a></li>
+                    <li><a href="https://shouyou.3dmgame.com/zt/" target="_blank">专题合集</a></li>
+                    <li><a href="https://shouyou.3dmgame.com/phb/" target="_blank">手游排行</a></li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <p>网络游戏</p>
+                <ul>
+                    <li><a href="https://ol.3dmgame.com/news/" target="_blank">网游资讯</a></li>
+                    <li><a href="https://ol.3dmgame.com/esports/" target="_blank">竞技赛事</a></li>
+                    <li><a href="https://ol.3dmgame.com/news_5_1/" target="_blank">网游活动</a></li>
+                    <li><a href="https://ol.3dmgame.com/ku/" target="_blank">网游大全</a></li>
+                    <li><a href="https://ol.3dmgame.com/test/" target="_blank">新游试玩</a></li>
+                    <li><a href="https://ol.3dmgame.com/hao/" target="_blank">激活码</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="fotter-bottom">
+        <div class="fotter-link">
+            <a href="https://www.3dmgame.com/s/about.html" target="_blank">关于3DMGAME</a>|
+            <a href="https://www.3dmgame.com/s/joinus.html" target="_blank">招聘信息</a>|
+            <a href="https://www.3dmgame.com/s/sitemap.html" target="_blank">网站地图</a>|
+            <a href="https://www.3dmgame.com/s/contact.html" target="_blank">联系我们</a>|
+            <a href="https://www.3dmgame.com/s/media.html" target="_blank">媒体信息</a>
+            <p>
+                CopyRight©2007-2017
+                <a href="https://www.3dmgame.com">WWW.3DMGAME.COM</a> All Right Reserved
+                <a href="http://www.beian.miit.gov.cn/state/outPortal/loginPortal.action"
+                   target="_blank" rel="nofollow">京ICP备14006952号-1</a>
+                京网文（2016）1650-207号
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

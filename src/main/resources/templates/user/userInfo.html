@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content=""/>
+    <meta name="Description" content=""/>
+    <title>个人资料</title>
+    <th:block th:include="~{/common/public_common::common_head}" />
+    <link rel="stylesheet" href="" th:href="@{/css/base-201908291.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/lt_base.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/travel.css}"/>
+</head>
+<body>
+<div class="header_wrap">
+    <div th:replace="~{/common/public_common::header_top}"></div>
+</div>
+<link rel="stylesheet" href="/css/default/basis-info.css?20190829" th:href="@{/css/basis-info-20190829.css}"/>
+<link rel="stylesheet" href="/css/third/calendar.css?20190829" th:href="@{/css/calendar-20190829.css}"/>
+<div class="tan_box">
+    <div class="box_show">
+        <div class="close_i"></div>
+        <p></p>
+        <div class="tab_list">
+            <div class="tab sure">确认</div>
+            <div class="tab cancel">取消</div>
+        </div>
+        <div class="a_more"><a href="/integral/">前往积分赚取说明</a></div>
+    </div>
+</div>
+<div class="cententwrap">
+    <div th:replace="~{user/common/userInfo_common::info-top(topURI='info')}"></div>
+    <div class="basis_wrap">
+    <div th:replace="~{user/common/userInfo_common::Cont_L(Cont_LURI='baseInfo')}"></div>
+    <div class="Cont_R">
+        <div class="Contr_lis basis_info"  style="display:block;">
+            <form id="setting" action="" th:action="@{/user/updateSetting}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_csrf" value="hs0drHaccKjfcDz69hnBix6t6mrKdZ9KREPladF-XbbJrEz1QvIW8bsSRrGVQK39XfucPvkc9HtxAtRdmS4f2A==" />
+                <div class="infowrap" style="height: 485px;">
+                    <div class="input_lis">
+                        <span>账号：</span>
+                        [[${session.loginUser.phoneNumber}]]
+                    </div>
+                    <div class="input_lis name_wrap">
+                        <span>昵称：</span> <i class="name_i" id="name_i">[[${session.loginUser.userName}]]</i>
+                        <input type="hidden" id="nickname" name="userName" value="" th:value="${session.loginUser.userName}" />
+                        <i class="on_i_name" id="on_i_name">修改</i>
+<!--                        <input type="hidden" id="oldnick" value="" th:value="${session.loginUser.userName}" />-->
+<!--                        <input type="hidden" id="upnickintegral" value="5" />-->
+<!--                        <input type="hidden" id="user_level"  value="1" />-->
+                    </div>
+                    <div class="input_lis gender_wrap">
+                        <span>性别：</span>
+                        <div class="radiobtn">
+                            <input type="radio" name="gender" id="boy" value="1" checked="checked"  />
+                            <span class="inpbg"  ></span>
+                        </div>
+                        <label for="boy">男</label>
+                        <div class="radiobtn">
+                            <input type="radio" name="gender" id="girl" value="2"  />
+                            <span  ></span>
+                        </div>
+                        <label for="girl">女</label>
+                    </div>
+                    <div class="input_lis Interest_wrap">
+                        <input type="hidden" name="personalized" id="personalized" value="" />
+                        <span>爱好游戏：</span>
+                        <div class="list_a">
+                            <div class="choose_btn">选择</div>
+                            <div class="choose_tips"><i></i>爱好最多可以选择5个标签</div>
+                        </div>
+                        <div class="list_b" style="display: none;">
+                            <div class="choose_inte">
+                            </div>
+                            <div class="inte_change">修改</div>
+                        </div>
+                        <div class="list_c">
+                            <div class="inte_item">
+                                <span  >动作</span>
+                                <span  >射击</span>
+                                <span  >独立</span>
+                                <span  >开放世界</span>
+                                <span  >休闲</span>
+                                <span  >解谜</span>
+                                <span  >恋爱</span>
+                                <span  >塔防</span>
+                                <span  >音乐</span>
+                                <span  >回合制</span>
+                                <span  >生存</span>
+                                <span  >平衡</span>
+                                <span  >潜行</span>
+                                <span  >联机</span>
+                                <span  >对战</span>
+                                <span  >中世纪</span>
+                                <span  >模拟</span>
+                                <span  >篮球</span>
+                                <span  >足球</span>
+                                <span  >即时战略</span>
+                                <span  >策略</span>
+                                <span  >经营</span>
+                                <span  >竞速</span>
+                                <span  >街机</span>
+                                <span  >角色扮演</span>
+                                <span  >格斗</span>
+                                <span  >二次元</span>
+                                <span  >日系</span>
+                                <span  >赛车</span>
+                                <span  >建造</span>
+                                <span  >改编</span>
+                                <span  >丧尸</span>
+                                <span  >空战</span>
+                                <span  >朋克</span>
+                                <span  >仙侠</span>
+                                <span  >沙盒</span>
+                                <span  >战棋</span>
+                            </div>
+                            <div class="changebtn_wrap">
+                                <span class="btn_a">确定</span>
+                                <span>取消</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input_lis home_wrap">
+                        <span>所在地：</span>
+                        <select id="province" name="province" onchange="changeprovice()">
+                            <option value="0" selected="selected">请选择省</option>
+                        </select>
+                        <select id="city" name="city" onchange="changecity()">
+                            <option  value="0"  selected="selected" >请选择市</option>
+                        </select>
+                        <select id="area" name="area">
+                            <option  value="0"  selected="selected" >请选择县</option>
+                        </select>
+                    </div>
+                    <div class="custombox">
+                        <div class="bt">自定义头像上传：</div>
+                        <div class="customtx">
+                            <div class="filebox">
+                                <div class="bj">
+                                </div>
+                                <ul class="custom_img" id="custom_img">
+                                    <img id="pre_head" style="display: none" />
+                                    <input type="file" name="headPhoto" id="headPhoto" onchange="changepic(this)"
+                                           accept="image/png, image/jpg, image/jpeg">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tips_info">
+                        <p>会员公告</p>
+                        <p>1、昵称禁止使用涉黄、政治、赌博、暴力、广告和污蔑性等内容，一旦发现，马上拉黑。</p>
+                        <p>2、昵称、头像、和所在地会在评论的时候显示，如果不设置会显示IP所在地区。</p>
+                        <p>3、昵称测试阶段禁止修改，给您带来诸多不便，希望能体谅。 </p>
+                    </div>
+                    <div class="btn_wrap clearf">
+                        <div class="save_btn" onclick="set_submit()">保存</div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<!--<script src="/js/third/lyz.calendar.min.js?2019102801"></script>-->
+<script src="" th:src="@{/js/basis-info.js}"></script>
+
+<div th:replace="~{/user/common/userInfo_common::fotter}"></div>
+<script src="" th:src="@{/js/base.js}"></script>
+<script src="" th:src="@{/js/user.js}"></script>
+<!--<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>-->
+
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+
+</body>
+</html>

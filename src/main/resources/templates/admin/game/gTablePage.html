@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- Basic -->
+    <meta charset="UTF-8"/>
+
+    <title>后台管理</title>
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+    <th:block th:include="~{/admin/common/admin_public::head}"></th:block>
+
+</head>
+
+<body>
+
+<div th:replace="~{/admin/common/admin_public::header}"></div>
+
+<!-- Start: Content -->
+<div class="container-fluid content">
+    <div class="row">
+
+        <div th:replace="~{/admin/common/admin_public::sidebar(page='gTablePage')}"></div>
+
+        <!-- Main Page -->
+        <div class="main ">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="pull-left">
+                    <ol class="breadcrumb visible-sm visible-md visible-lg">
+                        <li><a href="../index.html"><i class="icon fa fa-home"></i>Home</a></li>
+                        <li class="active"><i class="fa fa-laptop"></i>Dashboard</li>
+                    </ol>
+                </div>
+                <div class="pull-right">
+                    <h2>Dashboard</h2>
+                </div>
+            </div>
+            <!-- End Page Header -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel">
+                        <div class="panel-heading bk-bg-primary">
+                            <h6><i class="fa fa-table red"></i><span class="break"></span>游戏库</h6>
+                            <div class="panel-actions">
+                                <a href="table.html#" class="btn-setting"><i class="fa fa-rotate-right"></i></a>
+                                <a href="table.html#" class="btn-minimize"><i class="fa fa-chevron-up"></i></a>
+                                <a href="table.html#" class="btn-close"><i class="fa fa-times"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>gName</th>
+                                        <th>gType</th>
+                                        <th>publisher</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="game:${games}">
+                                        <td th:text="${game.gameInfo.gameId}">Willson</td>
+                                        <td th:text="${game.gameInfo.gameName}">Developer</td>
+                                        <td th:text="${game.gameInfo.type.typeName}">2563$</td>
+                                        <td th:text="${game.gameInfo.publisher}">
+                                            <span class="label label-warning">Pending</span>
+                                        </td>
+                                        <td>
+<!--                                            <a class="btn btn-success" href="table.html#">-->
+<!--                                                <i class="fa fa-search-plus "></i>-->
+<!--                                            </a>-->
+                                            <a class="btn btn-info g-upd-btn" th:href="@{/admin/updgame/{gid}(gid=${game.gameInfo.gameId})}">
+                                                <i class="fa fa-edit "></i>
+                                            </a>
+                                            <a class="btn btn-danger g-del-btn" href="javascript:void(0);">
+                                                <i class="fa fa-trash-o "></i>
+
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bk-margin-5 btn-group">
+                                <button type="button" class="btn btn-primary">1</button>
+                                <button type="button" class="btn btn-default">2</button>
+                                <button type="button" class="btn btn-default">3</button>
+                                <button type="button" class="btn btn-default">4</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Main Page -->
+
+    </div>
+</div><!--/container-->
+
+
+<!-- Modal Dialog -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title bk-fg-primary">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <p class="bk-fg-danger">Here settings can be configured...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div><!-- End Modal Dialog -->
+
+<div class="clearfix"></div>
+
+
+<!-- start: JavaScript-->
+
+<!-- Vendor JS-->
+<script th:src="@{/admin/vendor/js/jquery.min.js}"></script>
+<script th:src="@{/admin/vendor/js/jquery-2.1.1.min.js}"></script>
+<script th:src="@{/admin/vendor/js/jquery-migrate-1.2.1.min.js}"></script>
+<script th:src="@{/admin/vendor/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/admin/vendor/skycons/js/skycons.js}"></script>
+
+<!-- Plugins JS-->
+<script th:src="@{/admin/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js}"></script>
+<script th:src="@{/admin/plugins/scrollbar/js/jquery.mCustomScrollbar.concat.min.js}"></script>
+<!--<script th:src="@{/admin/plugins/bootkit/js/bootkit.js}"></script>-->
+<script th:src="@{/admin/plugins/moment/js/moment.min.js}"></script>
+<script th:src="@{/admin/plugins/fullcalendar/js/fullcalendar.min.js}"></script>
+<script th:src="@{/admin/plugins/touchpunch/js/jquery.ui.touch-punch.min.js}"></script>
+<script th:src="@{/admin/plugins/flot/js/jquery.flot.min.js}"></script>
+<script th:src="@{/admin/plugins/flot/js/jquery.flot.pie.min.js}"></script>
+<script th:src="@{/admin/plugins/flot/js/jquery.flot.resize.min.js}"></script>
+<script th:src="@{/admin/plugins/flot/js/jquery.flot.stack.min.js}"></script>
+<script th:src="@{/admin/plugins/flot/js/jquery.flot.time.min.js}"></script>
+<script th:src="@{/admin/plugins/xcharts/js/xcharts.min.js}"></script>
+<script th:src="@{/admin/plugins/autosize/jquery.autosize.min.js}"></script>
+<script th:src="@{/admin/plugins/placeholder/js/jquery.placeholder.min.js}"></script>
+<script th:src="@{/admin/plugins/datatables/js/dataTables.bootstrap.min.js}"></script>
+<script th:src="@{/admin/plugins/datatables/js/jquery.dataTables.min.js}"></script>
+<script th:src="@{/admin/plugins/raphael/js/raphael.min.js}"></script>
+<script th:src="@{/admin/plugins/morris/js/morris.min.js}"></script>
+<script th:src="@{/admin/plugins/gauge/js/gauge.min.js}"></script>
+<script th:src="@{/admin/plugins/d3/js/d3.min.js}"></script>
+<!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+
+<!-- Theme JS -->
+<script th:src="@{/admin/js/jquery.mmenu.min.js}"></script>
+<script th:src="@{/admin/js/core.min.js}"></script>
+
+<!-- Pages JS -->
+<script th:src="@{/admin/js/pages/index.js}"></script>
+
+<!-- end: JavaScript-->
+
+</body>
+
+</html>

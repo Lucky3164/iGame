@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>[[${gameTag.tagName}]]游戏大全</title>
+    <meta name="Keywords" th:content="${gameTag.tagName}" content="开放世界">
+    <meta name="Description" th:content="${gameTag.tagDesc}"
+          content="开放世界可以说是当今最为流行的游戏类型之一了，这类游戏都拥有着极度自由的特性，它们都包含了非常广阔的地图、众多的可探索区域、大量的可交互物体和丰富的剧情线，这些要素组合成了一个无比真实的游戏世界，给玩家们带来了非常优秀的沉浸式体验，毕竟，谁会讨厌来一次“第二人生”？">
+    <th:block th:include="~{/common/public_common::common_head}"/>
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/dj_base-2008259.css}">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/dj_common.css}">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/dj_label.css}">
+    <!--    <script src="static/js/ds.js"></script>-->
+</head>
+<body>
+<div th:replace="~{/common/public_common::header_wrap(pageUrl='game')}"></div>
+<div class="content">
+    <div class="crumb">
+        <i></i>您的位置：
+        <a href="index.html" target="_blank">单机</a> >
+        <a href="" th:href="@{/tag}" target="_blank">游戏标签</a>
+    </div>
+    <div class="dj_labe_info dj_labe_list">
+        <div class="index_top_nav"><span>游戏标签</span>
+            <p>
+                <a href="https://www.3dmgame.com/gl/ycgl/" target="_blank">原创攻略</a>|
+                <a href="https://www.3dmgame.com/qidaihanhua/" target="_blank">期待汉化</a>|
+                <a href="https://www.3dmgame.com/games/zq/" target="_blank">游戏专区</a>|
+                <a href="https://www.3dmgame.com/swzt/" target="_blank">游戏专题</a>|
+                <a href="https://www.3dmgame.com/zhzt/" target="_blank">游戏展会</a>|
+                <a>游戏标签</a>|
+                <a href="https://www.3dmgame.com/hanhua/" target="_blank">游戏汉化</a>|
+                <a href="https://dl.3dmgame.com/patch_zt/" target="_blank">补丁专题</a>
+            </p>
+        </div>
+        <div class="label_wrap">
+            <div class="item">
+                <th:block th:each="tag:${gameTags}">
+                    <a href="" th:text="${tag.tagName}" th:href="@{/tag/{tagId}(tagId=${tag.tagId})}">国产</a>
+                </th:block>
+
+            </div>
+            <div class="btn_more">展开 <i></i></div>
+        </div>
+        <div class="banner">
+            <a href="">
+                <img src="" th:src="${gameTag.headImg}">
+            </a>
+        </div>
+        <div class="main">
+            <div class="info">
+                <i></i><span th:text="${gameTag.tagName}">开放世界</span> | 共有游戏
+                <a th:text="${pageInfo.total}">453</a>款
+            </div>
+            <p th:text="${gameTag.tagDesc}">
+                开放世界可以说是当今最为流行的游戏类型之一了，这类游戏都拥有着极度自由的特性，它们都包含了非常广阔的地图、众多的可探索区域、大量的可交互物体和丰富的剧情线，这些要素组合成了一个无比真实的游戏世界，给玩家们带来了非常优秀的沉浸式体验，毕竟，谁会讨厌来一次“第二人生”？</p>
+        </div>
+        <div class="top">
+            <span>排序方式</span>
+            <p>
+                <a href="javascript:;">发布日期</a>
+                <a href="javascript:;">游戏评分</a>
+            </p>
+        </div>
+        <ul th:if="!${pageInfo.total > 0}">
+            <div class="tag_game_emptyTip">
+                暂时还没有游戏贴上该标签哦~
+            </div>
+        </ul>
+        <ul class="downllis" th:if="${pageInfo.total>0}">
+            <li th:each="game:${pageInfo.list}">
+                <div class="item">
+                    <a href="javascript:;" class="img">
+                        <img src="" th:src="${game.gameInfo.gameCoverImg}">
+                    </a>
+                    <div class="text">
+                        <a href="javascript:;" class="bt" th:text="${game.gameInfo.gameName}">《RuneScape》游戏库</a>
+                        <ol>
+                            <li>类型：<i th:text="${game.gameInfo.type.typeName}">角色扮演</i></li>
+                            <li class="li1"><span></span><i th:text="${game.views}">378</i></li>
+                            <li>评分：
+                                <i th:if="${game.aveScore != null}" th:text="${#numbers.formatDecimal(game.aveScore, 0, 1)}"></i>
+                                <i th:if="${game.aveScore == null}" th:text="0"></i>
+                            </li>
+                            <li>发布日期：<i th:text="${#dates.format(game.getFirstPlatform().releaseDate, 'yyyy-MM-dd')}">2020-09-25</i></li>
+                            <li>平台：
+                                <th:block th:each="plat:${game.gamePlatformMap}">
+                                    <i th:text="${plat.getValue().platform.platformName}">PC</i>
+                                </th:block>
+                            </li>
+                            <li class="li2">标签：
+                                <th:block th:each="tag:${game.tags}">
+                                    <a href="" th:href="@{/tag/{tagId}(tagId=${tag.tagId})}" th:text="${tag.tagName}" target="_blank">魔幻</a>
+                                </th:block>
+                            </li>
+                        </ol>
+                    </div>
+                    <a href="javascript:;" th:href="@{/game/{gameId}(gameId=${game.gameInfo.gameId})}" target="_blank" class="a_click">
+                        <i></i>进入专题
+                    </a>
+                </div>
+            </li>
+
+            <div class="clear"></div>
+        </ul>
+
+        <div th:replace="~{/common/public_common::pagewrap(pageInfo=${pageInfo}, pageURL=${pageURL})}"></div>
+
+    </div>
+</div>
+<!--<script type="text/javascript" src="static/js/viewscount.js"></script>-->
+<div class="fotter">
+    <div class="fotter-top clear">
+        <div class="center">
+            <div class="wrap">
+                <p>综合内容</p>
+                <ul>
+                    <li><a href="b96c638d68.html" target="_blank">硬件设备</a></li>
+                    <li><a href="forum.html" target="_blank">游戏论坛</a></li>
+                    <li><a href="3aa34371e2.html" target="_blank">娱乐频道</a></li>
+                    <li><a href="original.html" target="_blank">原创专栏</a></li>
+                    <li><a href="index2.html" target="_blank">游戏商城</a></li>
+                    <li><a href="index8.html" target="_blank">游戏汉化</a></li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <p>单机游戏</p>
+                <ul>
+                    <li><a href="index5.html" target="_blank">游戏下载</a></li>
+                    <li><a href="index7.html" target="_blank">补丁MOD</a></li>
+                    <li><a href="index6.html" target="_blank">原创攻略</a></li>
+                    <li><a href="3d8a1f28b0.html" target="_blank">Switch</a></li>
+                    <li><a href="5ecd1a7007.html" target="_blank">PS4</a></li>
+                    <li><a href="index12.html" target="_blank">发售表</a></li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <p>手机游戏</p>
+                <ul>
+                    <li><a href="e44e91079a.html" target="_blank">安卓游戏</a></li>
+                    <li><a href="3c3b8ffdc1.html" target="_blank">苹果游戏</a></li>
+                    <li><a href="865e9b788a.html" target="_blank">手游攻略</a></li>
+                    <li><a href="4e23d765ea.html" target="_blank">手游礼包</a></li>
+                    <li><a href="5b61288960.html" target="_blank">专题合集</a></li>
+                    <li><a href="e31c903aa4.html" target="_blank">手游排行</a></li>
+                </ul>
+            </div>
+            <div class="wrap">
+                <p>网络游戏</p>
+                <ul>
+                    <li><a href="6a4cf4e048.html" target="_blank">网游资讯</a></li>
+                    <li><a href="46f0ae20b3.html" target="_blank">竞技赛事</a></li>
+                    <li><a href="8350f0fc4c.html" target="_blank">网游活动</a></li>
+                    <li><a href="e958b78fc0.html" target="_blank">网游大全</a></li>
+                    <li><a href="5d8210b791.html" target="_blank">新游试玩</a></li>
+                    <li><a href="9b4c34f1d1.html" target="_blank">激活码</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="fotter-bottom">
+        <div class="fotter-link">
+            <a href="about.html" target="_blank">关于3DMGAME</a>|<a href="joinus.html" target="_blank">招聘信息</a>|<a
+                href="sitemap.html" target="_blank">网站地图</a>|<a href="contact.html" target="_blank">联系我们</a>|<a
+                href="media.html" target="_blank">媒体信息</a>|<a href="sqyd.html" target="_blank">家长监护申请引导</a>|<a
+                href="jzjh.html" target="_blank">家长监护</a>|<a href="index14.html" target="_blank">汉化翻译</a>
+            <p>CopyRight©2003-2018 违法和不良信息举报（021-54473036） All Right Reserved <a href="javascript:;" target="_blank"
+                                                                                 rel="nofollow">京ICP备14006952号-1</a>
+                京网文（2016）1650-207号 <a target="_blank" href="javascript:;"><img src="" style="float:left;"><span
+                        style="color:#939393;">沪公网安备 31011202006753号</span></a></p>
+        </div>
+    </div>
+</div>
+<script src="static/js/common-2008252.js" th:src="@{/js/common.js}"></script>
+<!--<script src="static/js/user-08251.js"></script>-->
+<!--<script src="static/js/TCaptcha.js"></script>-->
+
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+</body>
+</html>

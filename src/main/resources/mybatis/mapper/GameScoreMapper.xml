@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.GameScoreMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.GameScore">
+    <id column="score_id" jdbcType="INTEGER" property="scoreId" />
+    <result column="score_count" jdbcType="REAL" property="scoreCount" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="game_id" jdbcType="INTEGER" property="gameId" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_score
+    where score_id = #{scoreId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.igame.entity.GameScore">
+    insert into tb_score (score_count, user_id,
+      game_id)
+    values (#{scoreCount,jdbcType=REAL}, #{userId,jdbcType=INTEGER},
+      #{gameId,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.igame.entity.GameScore">
+    update tb_score
+    set score_count = #{scoreCount,jdbcType=REAL},
+      user_id = #{userId,jdbcType=INTEGER},
+      game_id = #{gameId,jdbcType=INTEGER}
+    where score_id = #{scoreId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select score_id, score_count, user_id, game_id
+    from tb_score
+    where score_id = #{scoreId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select score_id, score_count, user_id, game_id
+    from tb_score
+  </select>
+
+  <select id="selectByGameId" resultMap="BaseResultMap">
+    select score_id, score_count, user_id, game_id
+    from tb_score
+    <where>
+        and game_id=#{gameId,jdbcType=INTEGER}
+    </where>
+  </select>
+
+  <select id="selectDynamic" resultMap="BaseResultMap">
+    select score_id, score_count, user_id, game_id
+    from tb_score
+    <where>
+        <if test="gameId != null">
+          and game_id=#{gameId,jdbcType=INTEGER}
+        </if>
+        <if test="userId != null">
+          and user_id=#{userId,jdbcType=INTEGER}
+        </if>
+    </where>
+  </select>
+
+</mapper>

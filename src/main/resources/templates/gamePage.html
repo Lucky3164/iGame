@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title th:text="${gameNow.gameInfo.gameName}">英雄萨姆4星球恶棍下载_英雄萨姆4星球恶棍中文版下载_3DM单机</title>
+    <meta name="Description" th:content="${gameNow.gameInfo.gameIntroduce}"
+          content="《英雄萨姆4：星球恶棍（Serious Sam 4: Planet Badass）》是由Croteam制作的一款FPS游戏，是传奇系列“英雄萨姆”的最新作品。英雄萨姆系列自从2001年面世以来，业界与">
+    <th:block th:include="~{/common/public_common::common_head}"/>
+    <link rel="stylesheet" type="text/css" href="static/css/dj_base-20092610.css" th:href="@{/css/dj_base-2008259.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/dj_common.css" th:href="@{/css/dj_common.css}">
+    <link rel="stylesheet" type="text/css" href="static/css/downl.css" th:href="@{/css/downl.css}">
+    <!--    <script src="static/js/ds.js"></script>-->
+</head>
+<body>
+
+<div th:replace="~{/common/public_common::header_wrap(pageUrl='game')}"></div>
+
+<div class="content clear game">
+    <div class="crumb">
+        <i></i>您的位置：
+        <a href="" th:href="@{/}" target="_blank">首页</a> >
+        <a href="javascript:void(0);" target="_blank">游戏</a> >
+        <a href="javascript:void(0);" target="_blank" th:text="${gameNow.gameInfo.type.typeName}">第一人称射击</a> >
+        <a>游戏详情</a>
+    </div>
+    <div class="gameinfo">
+        <input type="hidden" id="gid" value="129726" th:value="${gameId}">
+        <div class="img"><img src="static/picture/1531273744_523163.jpg" th:src="${gameNow.gameInfo.gameCoverImg}">
+        </div>
+        <div class="baidu_img_Grasp"><img src="static/picture/1575545156_222617.jpg"></div>
+        <div class="name">
+            <i></i>
+            <h1 th:text="${gameNow.gameInfo.gameName}">《英雄萨姆4》中文免安装版</h1>
+            <a href="javascript:;" target="_blank" class="zt">进入专题</a>
+        </div>
+        <ul class="list">
+            <li><p>游戏类型：</p><span th:text="${gameNow.gameInfo.type.typeName}">第一人称射击</span></li>
+            <li><p>开发发行：</p><span th:text="${gameNow.gameInfo.publisher}">Croteam  |  Devolver Digital</span></li>
+            <li><p>发售日期：</p><span
+                    th:text="${#dates.format(gameNow.firstPlatform.releaseDate, 'yyyy-MM-dd')}">2020-09-24</span></li>
+            <li><p>游戏平台：</p><span th:each="plat:${gameNow.gamePlatformMap}"
+                                  th:text="${plat.value.platform.platformName + ' '}">PC</span></li>
+            <li><p>官方网站：</p>
+                <a href="javascript:;" target="_blank">点击进入</a>
+            </li>
+            <li><p>标签：</p>
+                <span th:if="!${gameNow.tags.size()>0}">暂无标签</span>
+                <th:block th:if="${gameNow.tags.size()>0}">
+                    <i th:each="tag:${gameNow.tags}">
+                        <a th:href="@{/tag/{tagId}(tagId=${tag.tagId})}" th:text="${tag.tagName}"></a>
+                    </i>
+                </th:block>
+            </li>
+        </ul>
+        <div class="pfwrap">
+            <div class="pfbox score_b" data-dp="0"  th:attr="data-dp=${uScore == null?0:uScore.scoreCount}">
+                <div class="scorewrap">
+                    <div class="score hover" th:onclick="|getscore(${gameId}, 'score_b')|">
+                        <span></span>
+                    </div>
+                    <div class="processingbar">
+                        <font th:if="${gameNow.aveScore != null}" th:text="${#numbers.formatDecimal(gameNow.aveScore, 0, 1)}">4.0</font>
+                        <font th:if="${gameNow.aveScore == null}" th:text="0">4.0</font>
+                    </div>
+                    <div class="txt">
+                        已有<span class="num1" th:text="${gameNow.scores.size()}">36</span>人评分
+                        <u class="myscore">您还未评分！</u>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="Content_L">
+        <div class="L_title">
+            <span>游戏介绍</span>
+        </div>
+        <div class="GmL_1">
+            <p style="text-indent:2em;" th:text="${gameNow.gameInfo.gameIntroduce}">
+                <!--                <strong>《英雄萨姆4：星球恶棍（Serious Sam 4: Planet Badass）》</strong>是由Croteam制作的一款FPS游戏，是传奇系列“英雄萨姆”的最新作品。英雄萨姆系列自从2001年面世以来，业界与玩家群体一直好评不断，其快节奏的游戏玩法、极高的可玩性、畅快淋漓的杀戮、惊心动魄的冒险都是广受好评的原因。-->
+            </p>
+            <!--            <p style="text-indent:2em;">-->
+            <!--                游戏摈弃了除了射击快感之外的所有多与元素，用大量的武器装备、恐怖又畸形的怪物和无脑突突突带来的血浆，把射击游戏的快感体现到了极致。让你在并不高的游戏难度下体验到最真实纯粹的刺激感和一路飙升的肾上腺素。-->
+            <!--            </p>-->
+            <!--            <p style="text-indent:2em;">-->
+            <!--                游戏中你将面对海量的外星奇特生物，它们残忍且冷酷无情，包括前作在内的众多怪物都将会登场，玩家将会见到最让你恐惧的无头自爆男，横冲直撞的蛮牛以及鹰身女巫，穿着橄榄球衣的兽人等，对于老玩家来说这都是满满的回忆。-->
+            <!--            </p>-->
+            <!--            <p align="center">-->
+            <!--                <img src="static/picture/1575961536_415346.jpg" alt="《英雄萨姆4》中文免安装版">-->
+            <!--            </p>-->
+            <h3>
+                玩法介绍
+            </h3>
+            <p style="text-indent:2em;" th:text="${gameNow.gameInfo.gameplay}">
+                <!--                <strong>AAAAAAAAAAAAA…BOOM&nbsp;</strong>-->
+            </p>
+            <!--            <p style="text-indent:2em;">-->
+            <!--                萨姆喜欢将遇到的任何东西当成靶子来射击，这次也不例外。对抗无情的敌人的庞大队伍，包括定义了像Kamikaze和Kleer这样特殊的人，以及那些准备在未来成为标志性人物的人。-->
+            <!--            </p>-->
+            <!--            <p style="text-indent:2em;">-->
+            <!--                <strong>更大，更坏，更好。</strong>-->
+            <!--            </p>-->
+            <!--            <p style="text-indent:2em;">-->
+            <!--                在充满可选目标，秘密和致命伏击的巨大环境中战斗并探索自己的方式。但是，不要害怕！《英雄萨姆4：星球恶棍》仍然是您喜欢的沉浸式的，线性的游戏体验，而不是开放世界的游戏。-->
+            <!--            </p>-->
+            <!--            <p style="text-indent:2em;">-->
+            <!--                <strong>Wroom，wroom</strong>-->
+            <!--            </p>-->
+            <!--            <p style="text-indent:2em;">-->
+            <!--                穿越大环境绝非易事。因此，请准备好您的驾驶技能，然后骑摩托车，联合收割机，甚至是防弹的警车，开车碾过你倒霉的敌人。-->
+            <!--            </p>-->
+            <!--            <p style="text-indent:2em;">-->
+            <!--                <strong>这次山姆带来了朋友</strong>-->
+            <!--            </p>-->
+            <!--            <p style="text-indent:2em;">-->
+            <!--                同伴不再只出现在过场动画中，而是参与其中。罗德里格斯（Rodriguez），琼斯（Jones），地狱火（Hellfire）和其他机组人员也将与山姆（Sam）一起穿越史诗般的巴达斯星球。-->
+            <!--            </p>-->
+            <h3>
+                小编点评
+            </h3>
+            <p style="text-indent:2em;">
+                英雄萨姆系列曾经给小时候的我带来了很大的震撼，那种紧张刺激感和爽快感是之前的游戏从来没有带来的，之后也很少有游戏能做到这一点。最深刻的印象就是各种奇形怪状的恐怖生物，以及五花八门的强大武器了。爽快的突突突简直刷新了认知，而作为系列新作，相信本作也不会让你失望的。
+            </p>
+            <h3>
+                相关推荐
+            </h3>
+            <p style="text-indent:2em;">
+                <strong><a href="javascript:;">《战争机器：终极版(Gears of War Ultimate Edition)》</a></strong>：人类的殖民星球——Sera行星，数十个国家为了争夺物质展开战斗，最终由维安政府联盟控制星球结束了这场战役，但是一群兽族却因此出现，联盟无法抵抗兽族的攻击，最终兽族在24小时内控制了整个星球上的重要城市以及个各种基地，联盟最终号召所有的生还者前往一个庇护所，发射终极武器消灭兽族，如果还未到达，则就此灭亡，但兽族依旧继续攻击该庇护所，盟军方面由于士兵的短缺，只好号召全部人类入伍战斗。
+            </p>
+            <p style="text-indent:2em;">
+                <strong><a href="javascript:;">《光环：致远星（Halo: Reach）》</a></strong>：由343 Industries,
+                Splash Damage, Ruffian Games,
+                Bungie等联合制作，微软发行，是XBOX平台上经典《光环》系列游戏的第六部作品。在之前先行的XBOX上就有玩家评论本作是系列中最为经典的一款，现在进入PC平台之后，具有针对性地进行了优化，具有了更强的画面表现力，以及新的内容。
+            </p></div>
+        <!--DIY推荐配置-->
+        <div class="L_title">
+            <span>DIY推荐配置</span>
+        </div>
+        <div class="GmL_2_2">
+            <div class="tabletop">
+                <p>画质</p>
+                <p>极佳</p>
+                <p>更好</p>
+                <p>好</p>
+                <p>入门</p>
+            </div>
+            <table border="0" cellspacing="1" cellpadding="1">
+                <tbody>
+                <tr>
+                    <td>分辨率：</td>
+                    <td>2560*1440</td>
+                    <td>2560*1440</td>
+                    <td>1920*1080</td>
+                    <td>1920*1080</td>
+                </tr>
+                <tr>
+                    <td>GPU：</td>
+                    <td>GeForce GTX 1080 Ti</td>
+                    <td>GeForce GTX 1070</td>
+                    <td>GeForce GTX 1060</td>
+                    <td>GeForce GTX 1050 Ti</td>
+                </tr>
+                <tr>
+                    <td>CPU：</td>
+                    <td>Core i7</td>
+                    <td>Core i7</td>
+                    <td>Core i5</td>
+                    <td>Core i5</td>
+                </tr>
+                <tr>
+                    <td>内存：</td>
+                    <td>8GB</td>
+                    <td>8GB</td>
+                    <td>6GB</td>
+                    <td>6GB</td>
+                </tr>
+                <tr>
+                    <td>推荐硬盘空间：</td>
+                    <td>50GB</td>
+                    <td>50GB</td>
+                    <td>50GB</td>
+                    <td>50GB</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="L_title">
+            <span>游戏图片</span>
+        </div>
+        <div class="GmL_4">
+            <div class="large_box">
+                <ul>
+<!--                    <li th:if="${gameNowPic.size()==0}">-->
+<!--                        <div>该游戏暂未收录截图噢</div>-->
+<!--                    </li>-->
+                    <li th:if="${gameNowPic.size()>0}" th:each="pic:${gameNowPic}">
+                        <img th:src="${pic.imagePath}">
+                    </li>
+                </ul>
+            </div>
+            <div class="small_box">
+                <span class="btn left_btn"></span>
+                <div class="small_list">
+                    <ul>
+                        <li th:each="pic:${gameNowPic}" th:class="${picStat.first}?'on':_">
+                            <img src="static/picture/1575957638_143724.jpg" th:src="${pic.imagePath}" width="110"
+                                 height="73">
+                            <div class="bun_bg"></div>
+                        </li>
+                    </ul>
+                </div>
+                <span class="btn right_btn"></span>
+            </div>
+        </div>
+        <div class="GmL_6">
+            <div class="news_warp_c">
+                <div class="itemc">
+                    <a href="javascript:;" target="_blank" class="img_a" style="display: block;">
+                        <img src="" th:src="${gameNow.gameInfo.gameCoverImg}" style="width: 100%; height:100%;"></a>
+                    <div class="text">
+                        <div class="name">
+                            <a href="javascript:;" target="_blank">[[${gameNow.gameInfo.gameName}]]<i>（[[${gameNow.gameInfo.gameName}]]）</i></a>
+                        </div>
+                        <div class="pfbox score_a" data-dp="0" th:attr="data-dp=${uScore == null?0:uScore.scoreCount}">
+                            <div class="scorewrap" th:onclick="|getscore(${gameId}, 'score_a')|">
+<!--                            <div class="scorewrap" onclick="show_score()">-->
+                                <div class="score hover">
+                                    <span></span>
+                                </div>
+                                <div class="processingbar">
+                                    <font th:if="${gameNow.aveScore != null}" th:text="${#numbers.formatDecimal(gameNow.aveScore, 0, 1)}">4.0</font>
+                                    <font th:if="${gameNow.aveScore == null}" th:text="0">4.0</font>
+                                </div>
+                                <div class="txt">
+                                    已有<span class="num1" th:text="${gameNow.scores.size()}">36</span>人评分
+                                    <u class="myscore">您还未评分！</u>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <ul class="ulwarp">
+                            <li class="lista">类型：<span th:text="${gameNow.gameInfo.type.typeName}">第一人称射击</span></li>
+                            <li>发行：<span class="test" th:text="${gameNow.gameInfo.publisher}">Devolver Digital</span>
+                            </li>
+                            <li class="lista">发售：<span>[[${#dates.format(gameNow.firstPlatform.releaseDate, 'yyyy-MM-dd')}]]（[[${gameNow.firstPlatform.platform.platformName}]]）</span>
+                            </li>
+                            <li>平台：
+                                <th:block th:each="plat:${gameNow.gamePlatformMap}">
+                                    <span th:text="${plat.value.platform.platformName + ' '}">PC PS4</span>
+                                </th:block>
+                            </li>
+                            <li class="listb">标签：<span>
+                                <span th:if="!${gameNow.tags.size()>0}">暂无标签</span>
+                                <th:block th:if="${gameNow.tags.size()>0}">
+                                    <i th:each="tag:${gameNow.tags}">
+                                        <a th:href="@{/tag/{tagId}(tagId=${tag.tagId})}" th:text="${tag.tagName}"></a>
+                                    </i>
+                                </th:block>
+                            </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="news_warp_f">
+                <ul>
+                    <li class="uli2">
+                        <a href="javascript:;" target="_blank">专区</a>
+                    </li>
+                    <li class="uli2">
+                        <a href="javascript:;" target="_blank">新闻</a>
+                    </li>
+                    <li class="uli2">
+                        <a href="javascript:;" target="_blank">攻略</a>
+                    </li>
+                    <li class="uli2">
+                        <a href="javascript:;" target="_blank">下载</a>
+                    </li>
+                    <li class="uli2">
+                        <a href="javascript:;" target="_blank">图片</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="commentswrap">
+            <script type="text/javascript">
+                var collect_type = 2;
+            </script>
+            <link rel="stylesheet" type="text/css" th:href="@{/css/comments-20090215.css}">
+            <script src="" th:src="@{/js/comments_my.js}"></script>
+            <div id="Comments_wrap">
+                <div class="Cs_head">
+                    <div class="Cs_ico1"></div>
+                    <p class="Cs_titile">玩家点评
+                        <span id="Ct_total" class="Comments_total">（<i>0</i>条评论）</span></p>
+                    <div id="Cs_collection" class="Cs_collection" onclick="ct_collect(this)">
+                        <i class="Cs_ico2"></i>
+                        <span>收藏</span>
+                    </div>
+                    <div id="Cs_report" class="Cs_report">
+                        <div id="Cs_report_bt" class="net" onclick="Ct_report()">
+                            <i class="Cs_ico3"></i>
+                            <span>违法和不良信息举报</span>
+                        </div>
+                    </div>
+                    <div class="Cs_share">
+                        <span>分享:</span>
+                        <div class="bdsharebuttonbox">
+                            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                            <a href="#" class="bds_qzone" data-cmd="more" title="分享到"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="Cs_postwrap">
+                    <div class="txtwrap">
+                        <div class="textarea-box">
+                            <textarea id="Ct_content" placeholder="请先登录后评论"></textarea>
+                        </div>
+                        <div class="poswrap">
+                            <button class="postbtn" onclick="ct_post()">发布</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Comments_wrap_div" class="cmt_hot">
+                    <div class="cmt_item_head">
+                        <p>热门评论</p>
+                    </div>
+                    <div id="Comments_hot">
+                        <div class="Cslis_wrap" id="Cslis_wrap_hot"></div>
+                    </div>
+                </div>
+                <div class="Cslis_titile">
+                    <p>全部评论</p>
+                    <div class="rit_btn Ct_sel_order">
+                        <a href="javascript:void(0);" id="by_new" class="on">最新</a>
+                        <a href="javascript:void(0);" id="by_last">最早</a></div>
+                </div>
+                <div class="Cslis_wrap" id="Cslis_wrap">
+                    <div id="Ct_norecord"><i></i></div>
+                </div>
+
+                <input type="hidden" id="Ct_nowPage" value="1">
+                <input type="hidden" id="Ct_totalPage" value="0">
+                <input type="hidden" id="Ct_totalNum" value="0">
+            </div>
+
+        </div>
+    </div>
+    <div class="Content_R">
+        <div class="Rnewslis mg_bt30">
+            <div class="QZ_title title_R">
+                <div>
+                    <span><i class="ico14"></i>相关新闻</span>
+                    <a href="javascript:;" target="_blank" class="mor2">更多<i>+</i></a>
+                </div>
+                <div class="lin"></div>
+            </div>
+            <ul class="lis">
+                <li><a href="3798273.html" target="_blank" class="img"><img src="static/picture/1600998219_927476.jpg"></a>
+                    <a href="3798273.html" target="_blank" class="bt">《英雄萨姆4》Steam褒贬不一 68%好评：巨爽！但画质粗糙 翻译不全 赶工明显</a>
+                    <p class="time"><i></i>2020-09-25</p></li>
+                <li><a href="javascript:;" target="_blank" class="img"><img src="static/picture/1600996617_783515.jpg"></a>
+                    <a href="javascript:;" target="_blank" class="bt">《英雄萨姆4》IGN 5分：敌人设计依旧出色 但玩多了确实无聊</a>
+                    <p class="time"><i></i>2020-09-25</p></li>
+                <li><a href="javascript:;" target="_blank" class="img"><img src="static/picture/1600930184_568752.jpg"></a>
+                    <a href="javascript:;" target="_blank" class="bt">《英雄萨姆4》开头13分钟演示 持枪屠怪爽翻天</a>
+                    <p class="time"><i></i>2020-09-24</p></li>
+            </ul>
+        </div>
+
+        <!--最新大作-->
+        <div class="dj_warp_k mg_bt30">
+            <div class="QZ_title title_R">
+                <div>
+                    <span><i class="ico13"></i>最新大作</span>
+                    <a href="index4.html" target="_blank" class="mor2">更多<i>+</i></a>
+                </div>
+                <div class="lin"></div>
+            </div>
+            <div class="net">
+                <div class="item" th:each="game:${released}" th:if="${gameStat.index < 8}">
+                    <a href="javascript:;" th:href="@{/game/{gid}(gid=${game.gameInfo.gameId})}" target="_blank" class="img">
+                        <img src="static/picture/1594602612_219856.jpg" th:src="${game.gameInfo.gameCoverImg}"></a>
+                    <div class="motai">
+                        <a href="javascript:;" target="_blank" th:href="@{/game/{gid}(gid=${game.gameInfo.gameId})}"
+                           class="bt" th:text="${game.gameInfo.gameName}">孤岛惊魂6</a>
+                        <ul>
+                            <li><i></i>[[${game.gameInfo.type.typeName}]]</li>
+                            <li><i></i>[[${#dates.format(game.firstPlatform.releaseDate, 'yyyy-MM-dd')}]]</li>
+                        </ul>
+                        <a href="javascript:;" th:href="@{/game/{gid}(gid=${game.gameInfo.gameId})}" target="_blank" class="a1">进入专区</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--<input type="hidden" id="hkid" value="23647">-->
+<script src="static/js/carousel.min.js" th:src="@{/js/carousel.min.js}"></script>
+<script src="static/js/downl.js" th:src="@{/js/downl.js}"></script>
+<script type="text/javascript" src="static/js/calluserlogin.js" th:src="@{/js/calluserlogin.js}"></script>
+<script type="text/javascript" src="static/js/viewscount.js" th:src="@{/js/viewscount.js}"></script>
+<!--<script type="text/javascript" src="static/js/statistics.js"></script>-->
+<script type="text/javascript">viewscount()</script>
+<div th:replace="~{/common/public_common::fotter}"></div>
+<script src="static/js/common-2008252.js" th:src="@{/js/common-2008252.js}"></script>
+<!--<script src="static/js/user-08251.js"></script>-->
+<!--<script src="static/js/TCaptcha.js"></script>-->
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+
+</body>
+</html>

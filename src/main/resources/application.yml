@@ -1,0 +1,44 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  redis:
+    database: 0
+    host: 192.168.186.74
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-idle: 8
+        max-wait: -1
+    timeout: 1200
+
+  datasource:
+    username: root
+    password: 31640813
+    url: jdbc:mysql://localhost:3306/igame_db?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+mybatis:
+  mapper-locations:
+  - classpath:mybatis/mapper/*.xml
+  - classpath:mybatis/mapper/wrapper/*.xml
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+shiro:
+  loginUrl: /login
+  sessionManager:
+    sessionIdUrlRewritingEnabled: false
+#server:
+#  servlet:
+#    context-path: /igame
+
+

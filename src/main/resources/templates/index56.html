@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>[[${year}]]年[[${month}]]月游戏发售表</title>
+    <th:block th:include="~{/common/public_common::common_head}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dj_base-2008259.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dj_common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/salelist.css}">
+    <!--    <script src="static/js/ds.js"></script>-->
+</head>
+<body>
+<div th:replace="~{/common/public_common::header_wrap(pageUrl='release')}"></div>
+
+<div class="content clear">
+    <div class="crumb">
+        <i></i>您的位置：
+        <a href="index1.html" target="_blank">首页</a> >
+        <a>发售表</a>
+    </div>
+    <div class="top_nav">
+        <a href="javascript:void(0);" class="plat" th:each="platform:${platforms}"
+           th:attr="data=${platform.platformId}" th:classappend="${platNow == platform.platformId?'as':_}"
+           th:text="${platform.platformName}">PC</a>
+    </div>
+    <div class="Sale_L">
+        <div class="yearbox">
+            <span>年份</span>
+            <div class="yearlis">
+                <div class="yearnum"><span class="num" th:text="${year}">2020</span><i></i></div>
+                <div class="yearlink">
+                    <a class="year" th:each="yearLi:${#numbers.sequence(2022, 2015)}"
+                       th:text="${yearLi}">2020</a>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:void(0);" class="month"
+           th:each="monthLi:${#numbers.sequence(1, 12)}" th:attr="data=${monthLi}"
+           th:text="${monthLi + '月发售表'}" th:classappend="${monthLi == month?'on':_}" data="01">1月发售表</a>
+
+    </div>
+    <div class="Sale_R">
+        <div class="Rtop">
+            <p>累计发售：<span th:text="${games.getTotal()}">63</span> 款</p>
+        </div>
+        <div class="Sale_list" th:if="${games.getList().size() == 0}">
+            <div class="Sale_list_emptyTip">
+                该时间内无游戏发售
+            </div>
+        </div>
+        <div class="Sale_list" th:if="${games.getList().size() > 0}">
+            <div class="lis" th:each="game:${games.getList()}">
+                <div class="img">
+                    <img src="" th:src="${game.gameInfo.gameCoverImg}">
+                </div>
+                <div class="bt">
+                    <a th:href="@{/game/{gid}(gid=${game.gameInfo.gameId})}" target="_blank" th:text="${game.gameInfo.gameName}">Evergate</a>
+                    <span th:text="${game.gameInfo.gameName}">Evergate</span>
+                </div>
+                <div class="linbox"></div>
+                <ul class="infolis">
+                    <li><i></i>开发： [[${game.gameInfo.publisher}]]</li>
+                    <li><i></i>发售：<span th:text="${#dates.format(game.gamePlatformMap.get(platNow).releaseDate, 'yyyy-MM-dd')}">2020-09-01</span></li>
+                    <li><i></i>类型：[[${game.gameInfo.type.typeName}]]</li>
+                    <li><i></i>平台：<span th:each="plat:${game.gamePlatformMap}" th:text="${plat.getValue().platform.platformName} + ' '">PC</span></li>
+                    <li><i></i>标签：
+                        <span th:if="${game.tags.size()==0}">暂无标签</span>
+                        <a th:href="@{/tag/{tid}(tid=${tag.tagId})}" th:each="tag:${game.tags}" th:if="!${game.tags.size()==0}"
+                           target="_blank" class="colr" th:text="${tag.tagName + ' '}">解谜</a>
+                    </li>
+                </ul>
+                <div class="scobox">
+                    <div class="score_a">
+                        <span th:if="${game.aveScore != null}" th:text="${#numbers.formatDecimal(game.aveScore, 0, 1)}">0.1</span>
+                        <span th:if="${game.aveScore == null}" th:text="0.0">0.1</span>
+                        <p>[[${game.scores.size()}]]人评分</p>
+                    </div>
+                    <a href="javascript:;" th:href="@{/game/{gid}(gid=${game.gameInfo.gameId})}" target="_blank" class="ztbtn">游戏专题</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div th:replace="~{/common/public_common::pagewrap(pageInfo=${games},pageURL=${pageUrl})}"></div>
+
+    </div>
+</div>
+<script src="static/js/release.js" th:src="@{/js/release.js}"></script>
+<div th:replace="~{/common/public_common::fotter}"></div>
+<script src="static/js/common-2008252.js" th:src="@{/js/common.js}"></script>
+
+<!--<script src="static/js/user-08251.js"></script>-->
+<!--<script src="static/js/TCaptcha.js"></script>-->
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.PlatformMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.Platform">
+    <id column="platform_id" jdbcType="INTEGER" property="platformId" />
+    <result column="platform_name" jdbcType="VARCHAR" property="platformName" />
+    <result column="platform_desc" jdbcType="VARCHAR" property="platformDesc" />
+    <result column="platform_url" jdbcType="VARCHAR" property="platformUrl" />
+    <result column="company" jdbcType="VARCHAR" property="company" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_platform
+    where platform_id = #{platformId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.igame.entity.Platform">
+    insert into tb_platform (platform_id, platform_name, platform_desc, 
+      platform_url, company)
+    values (#{platformId,jdbcType=INTEGER}, #{platformName,jdbcType=VARCHAR}, #{platformDesc,jdbcType=VARCHAR}, 
+      #{platformUrl,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.igame.entity.Platform">
+    update tb_platform
+    set platform_name = #{platformName,jdbcType=VARCHAR},
+      platform_desc = #{platformDesc,jdbcType=VARCHAR},
+      platform_url = #{platformUrl,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR}
+    where platform_id = #{platformId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select platform_id, platform_name, platform_desc, platform_url, company
+    from tb_platform
+    where platform_id = #{platformId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select platform_id, platform_name, platform_desc, platform_url, company
+    from tb_platform
+  </select>
+</mapper>

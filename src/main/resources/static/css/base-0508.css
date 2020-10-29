@@ -1,0 +1,62 @@
+
+/* CSS Document */
+/*基础部分*/
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,input,select,textarea,div,table,td,th,tr,dt,dd,dl{margin:0;padding:0;}
+ul,ol{list-style:none;}
+em,i{font-style:normal;}
+table{border-spacing:0;border-collapse:collapse;}
+img{border:none;vertical-align:middle;}
+input,select,button{vertical-align:middle;outline: none;}
+a{text-decoration:none;cursor:pointer;}
+a:hover{color: #c9c9c9;}
+body{min-width:1200px;font-family:"微软雅黑",'Microsoft YaHei','Arial','Heiti SC'; background:#f5f5f5;}
+
+/*头部*/
+.header_wrap .header_top{ height: 34px; width: 100%; background: #262626;}
+.center{ width: 1200px; margin: 0 auto;}
+.header_wrap .head_top_le{ float: left;width: 157px; background: #1b1b1b; height: 34px; line-height: 34px; color: #a8a8a8; padding-left:18px;}
+.header_wrap .head_top_le i{display: block;float: left; width: 27px; height: 24px; margin:5px 7px 0 0;background: url(/image/logo_xiaoniao.png) no-repeat;}
+.header_wrap .head_top_rt { float: right; width:auto; height: 34px;line-height: 34px;}
+.header_wrap .head_top_rt img{width: 25px; height: 25px;}
+.header_wrap .head_top_rt a{ color: #8a8a8a; font-size: 12px;padding: 0 5px;}
+.header_wrap .head_top_rt .login{border-right: 2px solid #8a8a8a; }
+.header_wrap .header_top{ height: 34px;}
+.header_top .ul_link{ float: left; max-width: 1000px; overflow: hidden; height: 34px; font-size: 12px;}
+.header_top .ul_link a{ display: block ; float: left; margin-right: 30px; height: 34px; line-height: 34px; color: #bfbfbf;}
+.header_top .ul_link a i{ display: inline-block; vertical-align: middle; background: url("/image/3dm_top_li.png") no-repeat center; margin:-3px 5px 0 0;}
+.header_top .ul_link a i.ico1{height:10px;width:19px;background-position: 0 0;}
+.header_top .ul_link a i.ico2{height:10px;width:20px;background-position: 0 -20px;}
+.header_top .ul_link a i.ico3{height:10px;width:15px;background-position: 0 -64px;}
+.header_top .ul_link a i.ico4{height:16px;width:11px;background-position: 0 -38px;margin-top: -3px;}
+.header_top .ul_link a i.ico5{height:16px;width:18px;background-position: 0 -89px;margin-top: -3px;}
+.header_top .ul_link a:hover{color:#fff;}
+/*logo2部*/
+.header_wrap .header{ height: 130px; width: 100%; line-height: 130px;  }
+.header_wrap .header .login{ width: 298px; height: auto; margin-top: 25px; float:  left;}
+.header_wrap .header .search{ width: 321px;height: 32px; float: right;padding-top: 60px;}
+.header_wrap .header input{height: 32px; width:254px; line-height: 32px;border: 1px solid #9b9b9b; text-indent: 2px; color: #999; padding-left: 10px; float: left;}
+.header_wrap .header  button{ width: 50px; background: #ff5842;border:none ; height: 34px; float: left; cursor: pointer; position: relative; display: inline-block;}
+.header_wrap .header  button i{width: 22px; height: 21px;margin: 6px 10px; background: url(/image/ioc-sou.png) no-repeat center; display: block;}
+/*导航*/
+.header_wrap .nav{ height: 56px; width:100%; line-height: 56px; background:#2b2b2b; font-size: 16px;}
+.header_wrap .nav ul{ float:  left; height: 56px; padding-left: 10px;}
+.header_wrap .nav ul li{float:  left; height: 56px;}
+.header_wrap .nav ul li a{ float:  left;width: 65px;  text-align: center; height: 56px; line-height: 56px; color: #c9c9c9; position: relative; max-width: 80px; overflow:  hidden;}
+.header_wrap .nav ul li a span{ position: absolute;top:5px; left:45%;  background: url(/image/imgq.png) no-repeat center;height:7px;width:16px;background-position: -43px 0;}
+.header_wrap .nav ol{ float: right; padding-right: 82px; width: 385px;}
+ .as{ background: #f0412a;}
+.header_wrap .nav ol li{float: left;}
+.header_wrap .nav ol li a{ float:  left; width:77px; text-align: center; line-height: 56px; color: #c9c9c9; max-width: 900px; height: 56px; overflow:  hidden;}
+/*底部*/
+.fotter .fotter-top{  overflow: hidden; background: #181818; width: 100%;padding-bottom: 30px;}
+.fotter .fotter-top .wrap{width: 300px; float:  left; color: #858585;}
+.fotter .fotter-top .wrap p{text-align:center; font-size: 20px; padding: 65px 0 10px 0; font-weight: 500; max-width: 300px; overflow:  hidden; }
+.fotter .fotter-top .wrap ul{ width: 277px; margin: 0 auto;}
+.fotter .fotter-top .wrap li a{ float: left; color: #858585; font-size: 14px; padding-top: 14px; width: 92px; text-align: center; max-width: 92px; overflow:  hidden;}
+.fotter .fotter-top .wrap li{float: left;}
+.fotter .fotter-top .wrap li a:hover{text-decoration:underline;color: #e13e28;}
+.fotter .fotter-bottom{height: 100px; width: 100%; background: #141414; color: #818181; padding-top:45px;}
+.fotter .fotter-link{ width: 1200px; margin: 0 auto; text-align: center;font-size: 14px;}
+.fotter .fotter-link a{ color:#818181 ;margin:0 12px; }
+.fotter .fotter-link p{padding-top: 20px;}
+

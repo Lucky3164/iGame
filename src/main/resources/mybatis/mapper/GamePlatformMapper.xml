@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.GamePlatformMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.GamePlatform">
+    <result column="game_id" jdbcType="INTEGER" property="gameId" />
+    <result column="platform_id" jdbcType="INTEGER" property="platformId" />
+    <result column="game_price" jdbcType="DECIMAL" property="gamePrice" />
+    <result column="release_date" jdbcType="DATE" property="releaseDate" />
+
+    <association property="platform" select="com.igame.mapper.PlatformMapper.selectByPrimaryKey"
+            column="platform_id">
+    </association>
+  </resultMap>
+  <insert id="insert" parameterType="com.igame.entity.GamePlatform">
+    insert into tb_game_platform (game_id, platform_id, game_price, 
+      release_date)
+    values (#{gameId,jdbcType=INTEGER}, #{platformId,jdbcType=INTEGER}, #{gamePrice,jdbcType=DECIMAL}, 
+      #{releaseDate,jdbcType=DATE})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select game_id, platform_id, game_price, release_date
+    from tb_game_platform
+    order by release_date
+  </select>
+  <select id="selectByGameId" resultMap="BaseResultMap">
+    select game_id, platform_id, game_price, release_date
+    from tb_game_platform
+    where game_id=#{gameId,jdbcType=INTEGER}
+    order by release_date
+  </select>
+</mapper>

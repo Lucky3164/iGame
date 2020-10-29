@@ -1,0 +1,27 @@
+
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,input,select,textarea,div,table,td,th,tr,dt,dd,dl{margin:0;padding:0;}
+ul,ol{list-style:none;}
+em,i{font-style:normal;}
+table{border-spacing:0;border-collapse:collapse;}
+img{border:none;vertical-align:middle;}
+input,select,button{vertical-align:middle;outline: none;}
+a{text-decoration:none;}
+a:hover{color: #c9c9c9;}
+html{background:#2b7bec url(/image/login_bg.jpg) no-repeat center !important;}
+body{font-family:'Microsoft YaHei','Arial','Heiti SC';background:none !important;}
+.loginwrap{width: 740px;height: 547px;margin:200px auto 0;margin-top: calc(50vh - 278px);border: 5px solid rgba(0,0,0,.2);position: relative;}
+.loginwrap .loginiframe{float: left; width: 510px;height: 100%;border: none;position: relative;z-index: 2;}
+.login_left{width: 230px;height: 100%;float: left;background: url("/image/login_left_bg.jpg") no-repeat;}
+.login_left .lis{margin-bottom:30px;}
+.login_left .lis .img{width: 100px;height: 100px;margin: 20px auto 10px;background: #fff;overflow: hidden;border-radius: 4px;}
+.login_left .lis p{width: 100%;color: #fff;font-size: 14px;line-height: 20px;text-align: center;}
+.login_left .lis img{margin: 0 auto;width: 96px;height: 96px;margin: 2px;display: block;float: left;}
+.login_left  .weibo{margin: 10px auto 25px;text-align: center;height: 30px;line-height: 30px;}
+.login_left .weibo i{ display: inline-block;width: 34px;height: 27px;background: url("/image/icon_wb.png") no-repeat;    vertical-align: middle;margin-right: 5px;}
+.login_left .weibo span{color: #fff;font-size: 14px;text-decoration: underline;height: 30px;line-height: 30px;}
+.logo{position:absolute;display: block; left:270px;top: -90px;width: 264px;height: 62px;background: url("/image/logo.png") no-repeat}
+.input_wrap .name_ico{background: none !important;}
+.input_wrap .password_ico{background: none !important;}
+.login_wrap{height:547px !important;}
+.form_login .submit{margin:40px  0 !important;background:#0094ff !important; }
+.other_login_list{margin-top:50px !important;}

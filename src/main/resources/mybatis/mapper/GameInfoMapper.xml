@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.GameInfoMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.GameInfo">
+    <id column="game_id" jdbcType="INTEGER" property="gameId" />
+    <result column="game_name" jdbcType="VARCHAR" property="gameName" />
+    <result column="game_type" jdbcType="INTEGER" property="gameType" />
+    <result column="views" jdbcType="INTEGER" property="views" />
+    <result column="game_cover_img" jdbcType="VARCHAR" property="gameCoverImg" />
+    <result column="publisher" jdbcType="VARCHAR" property="publisher" />
+    <result column="game_introduce" jdbcType="VARCHAR" property="gameIntroduce" />
+    <result column="gameplay" jdbcType="VARCHAR" property="gameplay" />
+
+    <association property="type" select="com.igame.mapper.GameTypeMapper.selectByPrimaryKey"
+                 column="game_type">
+    </association>
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_gameinfo
+    where game_id = #{gameId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.igame.entity.GameInfo">
+    insert into tb_gameinfo (game_id, game_name, game_type, 
+      game_cover_img, publisher, game_introduce, 
+      gameplay)
+    values (#{gameId,jdbcType=INTEGER}, #{gameName,jdbcType=VARCHAR}, #{gameType,jdbcType=INTEGER}, 
+      #{gameCoverImg,jdbcType=VARCHAR}, #{publisher,jdbcType=VARCHAR}, #{gameIntroduce,jdbcType=VARCHAR}, 
+      #{gameplay,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.igame.entity.GameInfo">
+    update tb_gameinfo
+    set game_name = #{gameName,jdbcType=VARCHAR},
+      game_type = #{gameType,jdbcType=INTEGER},
+      views = #{views,jdbcType=INTEGER},
+      game_cover_img = #{gameCoverImg,jdbcType=VARCHAR},
+      publisher = #{publisher,jdbcType=VARCHAR},
+      game_introduce = #{gameIntroduce,jdbcType=VARCHAR},
+      gameplay = #{gameplay,jdbcType=VARCHAR}
+    where game_id = #{gameId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select game_id, game_name, views, game_type, game_cover_img, publisher, game_introduce,
+    gameplay
+    from tb_gameinfo
+    where game_id = #{gameId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select game_id, game_name, views, game_type, game_cover_img, publisher, game_introduce,
+    gameplay
+    from tb_gameinfo
+  </select>
+</mapper>

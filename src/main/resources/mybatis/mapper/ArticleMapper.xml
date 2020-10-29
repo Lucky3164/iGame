@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.ArticleMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.Article">
+    <id column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="game_id" jdbcType="INTEGER" property="gameId" />
+    <result column="article_cover" jdbcType="VARCHAR" property="articleCover" />
+    <result column="head_cover" jdbcType="VARCHAR" property="headCover" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="outline" jdbcType="VARCHAR" property="outline" />
+    <result column="advantages" jdbcType="VARCHAR" property="advantages" />
+    <result column="disadvantages" jdbcType="VARCHAR" property="disadvantages" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="up_date" jdbcType="TIMESTAMP" property="upDate" />
+
+    <association property="user" select="com.igame.mapper.UserMapper.selectByPrimaryKey"
+                 column="user_id">
+    </association>
+    <association property="game" select="com.igame.mapper.wrapper.GameInfoWrapperMapper.selectByGameId"
+                 column="game_id">
+    </association>
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_article
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.igame.entity.Article">
+    insert into tb_article (article_id, user_id, game_id, article_cover, head_cover,
+      title, outline, advantages, 
+      disadvantages, content)
+    values (#{articleId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{gameId,jdbcType=INTEGER}, 
+      #{articleCover,jdbcType=VARCHAR}, #{headCover,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{outline,jdbcType=VARCHAR},
+      #{advantages,jdbcType=VARCHAR}, #{disadvantages,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.igame.entity.Article">
+    update tb_article
+    set user_id = #{userId,jdbcType=INTEGER},
+      game_id = #{gameId,jdbcType=INTEGER},
+      article_cover = #{articleCover,jdbcType=VARCHAR},
+      head_cover = #{headCover,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      outline = #{outline,jdbcType=VARCHAR},
+      advantages = #{advantages,jdbcType=VARCHAR},
+      disadvantages = #{disadvantages,jdbcType=VARCHAR},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select article_id, user_id, game_id, article_cover, head_cover, title, outline, advantages, disadvantages, content, up_date
+    from tb_article
+    where article_id = #{articleId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select article_id, user_id, game_id, article_cover, head_cover, title, outline, advantages, disadvantages, content, up_date
+    from tb_article
+  </select>
+</mapper>

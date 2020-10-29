@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title th:text="${article.title}">《不思议的皇冠》评测：策略和大局观比运气更重要_3DM专栏</title>
+    <th:block th:include="~{/common/public_common::common_head}">
+    </th:block>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dj_base-2008259.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dj_common.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/zl_infor.css}">
+
+</head>
+<body>
+<div th:replace="~{/common/public_common::header_wrap(pageUrl='article')}"></div>
+
+<div class="zl_ycinfor">
+    <div class="zl_banner">
+        <div class="img"><img th:src="${article.headCover}"></div>
+        <div class="banner_bj"></div>
+        <div class="zl_cent">
+            <h1 th:text="${article.title}">《不思议的皇冠》评测：策略和大局观比运气更重要</h1>
+        </div>
+    </div>
+    <div class="content ">
+        <div class="ZLmp1">
+            <div class="lef">
+                <div class="img">
+                    <div class="img_a"><img th:src="${article.user.hImgPath}"></div>
+                </div>
+                <div class="tex">
+                    <p class="p1" th:text="${article.user.userName}">店点</p>
+                    <p class="p2" th:text="${#dates.format(article.upDate, 'yyyy-MM-dd')}">2020-10-16</p>
+                </div>
+            </div>
+            <div class="rit">
+                <p class="p_top"><a href="original.html">返回专栏首页</a></p>
+                <p class="p1"><i class="ico_bj"></i>作者：[[${article.user.userName}]]</p>
+                <div class="pin" id="pin" data-id="Comments_wrap"><span><i class="in"></i>
+                    评论：<span id="Ct_top_total" class="nums"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="ZLmp2">
+            <div class="zl_center">
+                <i class="ico_i1"></i>
+                <i class="ico_i2"></i>
+                <div class="tex" th:text="${article.outline}">
+                    风来的西林，不思议的皇冠。
+                </div>
+            </div>
+        </div>
+        <div class="ZLmp3">
+            <div class="feell_nav">
+                <ul></ul>
+                <div class="top_h" id="get_top"></div>
+            </div>
+            <div class="zl_cent" th:text="${article.content}">
+
+            </div>
+            <div class="evaluatingnumber">评分：
+                <span th:if="${article.game.aveScore != null}"
+                      th:text="${#numbers.formatDecimal(article.game.aveScore, 0, 1)}">8</span>
+                <span th:if="${article.game.aveScore == null}" th:text="0">8</span>
+            </div>
+            <div class="ZLmp4" style="height: 226px">
+                <div class="MP1">
+                    <div class="nest">
+                        <a class="img" th:href="@{/game/{gid}(gid=${article.game.gameInfo.gameId})}"><img th:src="${article.game.gameInfo.gameCoverImg}"></a>
+                        <div class="tex">
+                            <a href="javascript:;" class="bt">
+                                <p th:text="${article.game.gameInfo.gameName}">不思议的皇冠</p>
+                            </a>
+                            <ul>
+                                <li><i></i>发行商：[[${article.game.gameInfo.publisher}]]</li>
+                                <li><i></i>上线时间：[[${#dates.format(article.game.firstPlatform.releaseDate, 'yyyy-MM-dd')}]]</li>
+                                <li><i></i>平台：PC</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="MP2">
+                    <div class="item">
+                        <div class="bt bt1"><a>优点</a></div>
+                        <ul>
+                            <th:block th:each="adv:${article.advantages.split('-')}">
+                                <li><i class="jia_i"></i><a th:text="${adv}">武器设计较为平衡</a></li>
+                            </th:block>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <div class="bt bt2"><a>不足</a></div>
+                        <ul>
+                            <th:block th:each="dadv:${article.disadvantages.split('-')}">
+                                <li><i class="jan_i"></i><a th:text="${dadv}">学习成本过高</a></li>
+                            </th:block>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="commentswrap">
+                <script type="text/javascript">
+                    var collect_type = 2;
+                </script>
+                <link rel="stylesheet" type="text/css" th:href="@{/css/comments-20090215.css}">
+                <script src="" th:src="@{/js/comments_my.js}"></script>
+                <div id="Comments_wrap">
+                    <div class="Cs_head">
+                        <div class="Cs_ico1"></div>
+                        <p class="Cs_titile">玩家点评
+                            <span id="Ct_total" class="Comments_total">（<i>0</i>条评论）</span></p>
+                        <div id="Cs_collection" class="Cs_collection" onclick="ct_collect(this)">
+                            <i class="Cs_ico2"></i>
+                            <span>收藏</span>
+                        </div>
+                        <div id="Cs_report" class="Cs_report">
+                            <div id="Cs_report_bt" class="net" onclick="Ct_report()">
+                                <i class="Cs_ico3"></i>
+                                <span>违法和不良信息举报</span>
+                            </div>
+                        </div>
+                        <div class="Cs_share">
+                            <span>分享:</span>
+                            <div class="bdsharebuttonbox">
+                                <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+                                <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                <a href="#" class="bds_qzone" data-cmd="more" title="分享到"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Cs_postwrap">
+                        <div class="txtwrap">
+                            <div class="textarea-box">
+                                <textarea id="Ct_content" placeholder="请先登录后评论"></textarea>
+                            </div>
+                            <div class="poswrap">
+                                <button class="postbtn" onclick="ct_post()">发布</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="Comments_wrap_div" class="cmt_hot">
+                        <div class="cmt_item_head">
+                            <p>热门评论</p>
+                        </div>
+                        <div id="Comments_hot">
+                            <div class="Cslis_wrap" id="Cslis_wrap_hot"></div>
+                        </div>
+                    </div>
+                    <div class="Cslis_titile">
+                        <p>全部评论</p>
+                        <div class="rit_btn Ct_sel_order">
+                            <a href="javascript:void(0);" id="by_new" class="on">最新</a>
+                            <a href="javascript:void(0);" id="by_last">最早</a></div>
+                    </div>
+                    <div class="Cslis_wrap" id="Cslis_wrap">
+                        <div id="Ct_norecord"><i></i></div>
+                    </div>
+
+                    <input type="hidden" id="gid" th:value="${article.game.gameInfo.gameId}">
+                    <input type="hidden" id="Ct_nowPage" value="1">
+                    <input type="hidden" id="Ct_totalPage" value="0">
+                    <input type="hidden" id="Ct_totalNum" value="0">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="typeid" value="40">
+<input type="hidden" id="reviewid" value="3742386">
+<script src="static/js/zl_infor.js"></script>
+<script type="text/javascript" th:src="@{/js/statistics.js}"></script>
+<script src="static/js/three_3d.js"></script>
+<script type="text/javascript" th:src="@{/js/viewscount.js}"></script>
+<script type="text/javascript">viewscount()</script>
+<div th:replace="~{/common/public_common::fotter}"></div>
+<script th:src="@{/js/common-2008252.js}"></script>
+<!--<script src="static/js/user-08251.js"></script>-->
+<!--<script src="static/js/TCaptcha.js"></script>-->
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+</body>
+</html>

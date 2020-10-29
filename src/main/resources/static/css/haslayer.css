@@ -1,0 +1,235 @@
+.login_wrap{height:460px;background: #fff;display: block;max-width:900px;min-width:320px;margin: 0 auto;    padding: 0 20px;}
+.login_wrap .title{float: left;width: 100%;text-align: center;line-height: 20px;height:20px; margin: 25px auto;font-size: 20px;color: #000;}
+.login_wrap .input_wrap{float: left;width: 100%;height: 50px;background: #f9f9f9;border:1px solid #e1e1e1;border-radius: 3px;margin-bottom: 20px;position: relative;}
+.login_wrap .input_wrap input{width: 80%;width: calc(100% - 60px);padding-left:60px;height: 50px;line-height: 50px;border: none;background-color:#fff;font-size: 16px;color: #010101;}
+.input_wrap>div{width:50px;height: 26px;border-right:1px solid #c7c7c7;position:absolute;left: 0;top: 12px;z-index: 2;}
+.input_wrap>div i{display: block;background: url(/image/login_ico.png) no-repeat;}
+.login_username .name_ico i{margin-left: 13px;height:26px;width:26px;background-position: 0 -58px;}
+.login_password .password_ico i{margin-left: 15px;height:23px;width:19px;background-position: -31px -59px;}
+.form_login .Tipsbox{display: none; width:80%;position: absolute;height: 30px;line-height: 30px;font-size: 12px;color: #ff5959;left: 30px;}
+.form_login .Tips-name{top: 118px;}
+.form_login .Tips-pswd{top: 194px;}
+.form_login .Tipsbox i{display: block;float: left;background: url(/image/login_ico.png) no-repeat;height:13px;width:13px;background-position: 0 -107px;margin: 8px 8px 0 0;}
+/*auto_login*/
+.auto_login{width: 100%;height: 30px;float: left;margin-top: 6px;position: relative;}
+.auto_login .radiobtn{float: left;margin-top: 2px;}
+.btn_ico_bg{background:#fff url(/image/login_ico.png) no-repeat !important;background-position: -53px -55px !important;}
+.auto_login label{cursor: pointer; float: left; font-size: 14px;color: #909090;margin: 0 10px;}
+
+.auto_login .forget_link{float: left;width: 70px;height: 12px;line-height: 12px;display: block;border-left: 1px solid #7f7f7f;font-size: 14px;color: #909090;text-indent:8px;margin-top: 5px;}
+.auto_login .registered_link{float: right;height: 12px;line-height: 12px;font-size: 14px;color: #5191d2;margin-top: 5px;}
+.form_login .submit{display: block;float: left;width: 100%;height: 50px;line-height: 50px;text-align: center;color: #fff;font-size: 18px;background: #ff5959;text-align: center;border-radius: 4px;margin: 20px 0;}
+.form_login .submit:hover{opacity: 0.9;}
+/*other_login*/
+.other_login{width: 100%;height: 0;float: left;border-top: 1px solid #e1e1e1;border-bottom: 1px solid #fafafa;margin-top: 10px;}
+.other_login p{width: 146px;height: 20px;text-align: center;line-height: 20px;background: #fff;font-size: 18px;color: #787878;margin: -10px auto 0;}
+.other_login_list{display: block;float: left;width: 100%;margin-top: 25px;}
+.other_login_list>div{width: 33.3%;float: left;}
+.other_login_list>div i{display: block;background: url(/image/login_ico.png) no-repeat;height:54px;width:54px;margin: 0 auto;cursor: pointer;}
+.other_login_list>div i:hover{opacity: 0.9;}
+.other_login_list>div.weixin i{background-position: -57px 0;}
+.other_login_list>div.QQ i{background-position: -114px 0;}
+#my_user_top {cursor: pointer; float: right; width:auto; height: 34px;line-height: 34px;position: relative;}
+#my_user_top img{width: 25px; height: 25px; border-radius: 50%; cursor: pointer;}
+#my_user_top a,#my_user_top span{ color: #8a8a8a; font-size: 12px;/* padding: 0 5px; */ cursor: pointer;}
+#my_user_top .username a{padding: 0 10px 0 5px;}
+#my_user_top .login{border-right: 2px solid #8a8a8a;}
+#my_user_top:hover .exitwrap{display: block;}
+#my_user_top .exitwrap{display: none;width: 240px;background: #fff;box-shadow: 0 0 10px rgba(0,0,0,.4);position: absolute;z-index: 10;right: 0;top: 34px;}
+#my_user_top .exitwrap .txwrap,
+#my_user_top .exitwrap .txwrap img{width: 50px;height: 50px;border-radius: 50%;}
+#my_user_top .exitwrap .txwrap{float: left;margin: 16px 20px 0 16px;}
+#my_user_top .exitwrap .usname{float:left; width: 145px;height: 50px;line-height: 50px;white-space: nowrap;text-overflow: ellipsis; overflow: hidden;color: #323232;font-size: 16px;margin-top: 16px;}
+#my_user_top .exitwrap .usname a{margin-top: 0px;font-size: 16px;color: #1a89ed;}
+#my_user_top .exitwrap .signature{float:left;font-size: 14px;color: #323232;margin: 10px 15px 10px;width: 210px;line-height: 20px;max-height: 62px;overflow: hidden;}
+#my_user_top .exitwrap .exitbtn{float: left;margin-left: 15px;width: 210px;height: 50px;border-top: 1px solid #e8e8e8;}
+#my_user_top .exitwrap .exitbtn .exit{float: right;margin-top: 10px;font-size: 14px;color: #323232;}
+#my_user_top .exitwrap .exitbtn .list{float: left;}
+#my_user_top .exitwrap .exitbtn .list a{padding: 0;margin: 15px 8px;display: block;float: left;background: url(/image/img-exit.png) no-repeat;}
+#my_user_top .exitwrap .exitbtn .list a.phone{height:25px;width:17px;background-position: 0 0;}
+#my_user_top .exitwrap .exitbtn .list a.weixin{height:19px;width:23px;background-position: 0 -55px;margin-top: 18px;}
+#my_user_top .exitwrap .exitbtn .list a.qq{height:21px;width:18px;background-position: 0 -30px;margin-top: 18px;}
+#my_user_top .exitwrap .exitbtn .list a.weibo{height:19px;width:24px;background-position: 0 -79px;margin-top: 20px;}
+#my_user_top .exitwrap .exitbtn .list a.phone.on{background-position: -23px 0;}
+#my_user_top .exitwrap .exitbtn .list a.weixin.on{background-position: -27px -56px;}
+#my_user_top .exitwrap .exitbtn .list a.qq.on{background-position: -23px -31px;}
+#my_user_top .exitwrap .exitbtn .list a.weibo.on{background-position: -30px -79px;}
+#my_user_top .exitwrap .usname .name{display:block;line-height:24px;height:24px;overflow:hidden;color:#f04029;font-size: 15px;white-space: nowrap;text-overflow: ellipsis;}
+#my_user_top .exitwrap .usname .jf{color:#f29a76;font-size:12px;display:  block;height:  20px;line-height:  20px;overflow:  hidden;white-space: nowrap;text-overflow: ellipsis;}
+#my_user_top .exitwrap .bq_list{padding: 5px 10px;float:  left;width: 92%;position: relative;height: auto;}
+#my_user_top .exitwrap .bq_list li{float:left;width: 33%;text-align:center;line-height: 24px;height:24px;font-size: 12px;}
+#my_user_top .exitwrap .bq_list li a{color: #313131; padding:0px; margin:0px;}
+#my_user_top .exitwrap .bq_list li a:hover{color:#1a89ed;}
+.fk_tips .layui-layer-content{height:auto !important;}
+input:-webkit-autofill {-webkit-box-shadow: 0 0 0px 1000px white inset !important;background-image: none;}
+#my_user_top .exitwrap .usname .name span{display:inline-block;float:left;color: #f04029;font-size: 15px;padding:  0;max-width: 95px;overflow:  hidden;}
+#my_user_top .exitwrap .usname ._vip_grade { display: inline-block; background: url(/image/ico_vip_dj.png) no-repeat center; width: 40px; height: 15px!important;  position: relative; overflow: visible!important; margin: -5px 0 0 5px; vertical-align: middle;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico0{background-position: 0 0;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico1{background-position: 0 -22px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico2{background-position: 0 -47px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico3{background-position: 0 -73px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico4{background-position: 0 -100px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico5{background-position: 0 -123px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico6{background-position: 0 -148px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico7{background-position: 0 -174px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico8{background-position: 0 -200px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico9{background-position: 0 -224px;}
+#my_user_top .exitwrap .usname ._vip_grade.vip_ico10{width:47px;background-position: 0 -248px;}
+/*新增的提醒*/
+#my_user_top .tixing:hover + .tx_warp{display: block!important;}
+#my_user_top .tx_warp:hover{display: block;}
+#my_user_top .tixing{width:18px;height: 100%;background:url(/image/ico_tixing.gif)no-repeat center;display:inline-block;vertical-align:  middle;position:  relative;}
+#my_user_top .tixing a{width: 100%; height: 100%; display: inline-block;padding: 0; margin: 0;}
+#my_user_top .tx_warp{width: 300px;height: 323px;background: #fff;box-shadow: 0 0 10px rgba(0,0,0,.4);position: absolute;z-index: 18;right: 0px;top: 34px;cursor: default;overflow: hidden;display: none;}
+#my_user_top .tx_warp .tx_warp_bt{height: 55px; line-height: 55px; padding: 0 20px;border:1px solid #eeeeee; }
+#my_user_top .tx_warp .tx_warp_bt span{display:block; float: left;color: #1b1b1b;font-size: 15px; padding: 0;}
+#my_user_top .tx_warp .tx_warp_bt .rit_a{float: right; display: block; color: #959595; font-size: 12px; padding: 0;}
+#my_user_top .tx_warp .tx_warp_box{width: 100%; overflow: hidden;}
+#my_user_top .tx_warp .tx_warp_box .list{overflow-y: scroll;overflow-x: hidden;height: 225px;border-bottom:1px solid #eeeeee;}
+#my_user_top .tx_warp .tx_warp_box .list a{display: block; padding: 15px; line-height: 24px; font-size: 14px;}
+#my_user_top .tx_warp .tx_warp_box .list a i{color: #1b1b1b;font-weight: bold;padding-right: 3px;}
+#my_user_top .tx_warp .tx_warp_box .list a.on i{font-weight: bold;}
+#my_user_top .tx_warp .tx_warp_box .list::-webkit-scrollbar { width: 6px; height: 6px; background: #fff; }
+#my_user_top .tx_warp .tx_warp_box .list::-webkit-scrollbar-button { width: 0; height: 0; }
+#my_user_top .tx_warp .tx_warp_box .list::-webkit-scrollbar-corner { display: block; }
+#my_user_top .tx_warp .tx_warp_box .list::-webkit-scrollbar-thumb { background-clip: padding-box; background-color: #e5e5e5; border-radius: 10px; }
+#my_user_top .tx_warp .tx_warp_more{height: 40px; line-height: 40px; text-align: center; line-height: 40px; }
+#my_user_top .tx_warp .tx_warp_more a{color: #535353;font-size: 13px;}
+#my_user_top .tx_warp .tx_warp_box .list a:hover{background: #f4f4f4;}
+#my_user_top .tx_warp .tx_warp_box .list a:hover span{color: #ff4128;}
+#my_user_top .tx_warp .tx_warp_box .list a{padding: 15px;position:  relative;z-index: 1000;}
+#my_user_top .tx_warp .tx_warp_box .list div i{color: #1b1b1b; font-size:14px;padding-right: 3px;}
+#my_user_top .tx_warp .tx_warp_box .list div{line-height:20px; padding:7px 15px; word-break: break-all}
+#my_user_top .tx_warp .tx_warp_box .list div span{padding:  0;}
+#my_user_top .tx_warp .tx_warp_box .list div a{padding:0;display: inline;word-break: break-all;}
+#my_user_top .tx_warp .tx_warp_box .list div:hover span{color: #ff4128;}
+#my_user_top .tx_warp .tx_warp_box .list div:hover span a{color: #ff4128;}
+#my_user_top .tx_warp .tx_warp_box .list div:hover{background: #f4f4f4;}
+
+.header_wrap{z-index:4;}
+
+/*10.10*/
+.login_wrap{padding:0 40px;height:  100%;}
+.form_login .Tipsbox{ left:40px;}
+.form_login .Tips-pswd {top: 204px;}
+.form_login .Tips-name {top: 122px;}
+.login_wrap .input_wrap{ margin-bottom:30px;}
+.form_login .submit{ margin:30px 0}
+.login_wrap .input_wrap .Tipsbox_yes{position:absolute;right: -25px;top: 20px;border:none;background:url("/image/ico_tb.png")no-repeat center;height:13px;width:13px;background-position: 0 -26px; display:none;}
+.login_wrap .auto_login .radiobtn{width:18px; height:18px; position:relative;}
+.login_wrap .auto_login #atloginck{ opacity:0; filter:alpha(opacity=0);-moz-opacity:0; -khtml-opacity: 0;position:absolute; left:0; top:0; width:100%; height:100%;}
+.login_wrap .auto_login span{background:url("/image/ico_tb.png")no-repeat center;height:18px;width:18px; display:block;background-position: 0 -53px;}
+.login_wrap .auto_login span.inpbg{background-position: -54px -56px;}
+.login_wrap .auto_login label{margin-top: 1px;}
+.other_login p{font-size: 15px;}
+.other_login_list{ margin-top:50px;}
+.auto_login .registered_link{cursor: pointer;}
+
+.form_register{width: 400px; position: relative; left: -20px; display:none;}
+.form_register .infowrap .input_lis{width: 100%;height:46px;line-height: 46px;margin-bottom: 21px;position: relative; clear: both; margin-top:0px;}
+.form_register .infowrap .input_lis>span{display: block;float: left;margin-right: 5px;text-align: right;font-size: 16px;color: #222;width: 80px;letter-spacing: 2px;}
+.form_register .infowrap .input_lis input{width: 288px;height: 20px;padding: 12px 5px ;border: 1px solid #e5e5e5;float: left;font-size: 16px;color: #222;}
+.form_register .input_lis #areacode{  width:300px;  padding: 0 5px;  height: 46px;  background: #fff;  border: 1px solid #e5e5e5;  float: left;  font-size: 16px;  color: #222;  }
+.form_register .input_lis #areacode option{width: 100%;}
+.form_register 	.yzm_inp .yzm-c {  width: 167px !important;  }
+.form_register .yzm_inp .time{width: 100px;float:left; margin-left:20px;background: #ff5959;height: 46px;color: #fefefe;font-size: 16px;text-align: center;cursor: pointer;}
+.form_register 	.yzm_inp .time:hover{opacity: 0.9;}
+.form_register 	.yzm_inp{margin-bottom: 5px !important;}
+.form_register 	.infowrap .tips{font-size: 12px;color: #b5b5b5;line-height: 40px;margin-left: 85px;}
+.form_register .infowrap .tips a,.infowrap .tips span{color: #5d9bdb;cursor: pointer;}
+.form_register 	.submit_wrap .submit{display:block;text-align: center;width: 325px;height: 45px;background: #ff5959;line-height: 45px;font-size: 18px;color: #fff;margin:10px auto;}
+.form_register .submit_wrap .submit:hover{opacity: 0.9;}
+.form_register .rule_wrap{width: 325px;height: 20px;line-height: 20px;margin:20px auto;position: relative;}
+.form_register .rule_wrap .btn_ico2{float: left;background:url(/image/ico_tb.png) no-repeat;background-position: 0px -82px;display: block;width: 18px;height: 18px;z-index: 0;}
+.form_register .rule_wrap .btn_ico2.clik{background-position: 0px -53px;}
+.form_register 	.rule_wrap input{float: left;width:  18px;height:  18px;position:  absolute;top: 0;z-index: 2;opacity:0; filter:alpha(opacity=0);-moz-opacity:0; -khtml-opacity: 0;}
+.form_register 	.rule_wrap label{float: left; font-size: 12px;color: #b5b5b5;cursor: pointer;margin-left:5px;}
+.form_register 	.rule_wrap>a{float: left; color: #5d9bdb;font-size: 12px;}
+.form_register 	.rule_wrap .tips_login{ display: block;float: right;font-size: 12px;color: #b5b5b5;}
+.form_register 	.rule_wrap .tips_login a,.rule_wrap .tips_login span{color: #5d9bdb;cursor: pointer;}
+.form_register .red_c {  border: 1px solid #ff5959 !important;  }
+.form_register .tips_lis{position: absolute;left: 70px;top: 30px;height: 45px;width: auto;}
+.form_register .tips_lis u.dui{display: block;background: url(/image/ico_tb.png) no-repeat;height:13px;width:13px;background-position: 0 -26px;margin-top: 15px;}
+.form_register .tips_lis p i{display: block;float: left;background: url(/image/ico_tb.png) no-repeat;height:13px;width:13px;background-position: 0 0px;margin-top: 18px;}
+.form_register .tips_lis p span.tips_txt{width: 280px;display: block;position: absolute;top: 15px;left:20px ;font-size: 12px;color: #ff5959;line-height: 20px;}
+.form_register .time_bg {  background: #323232 !important;  }
+.form_register .tips_yese{position:absolute;right: -5px;top: 16px;border:none;background:url("/image/ico_tb.png")no-repeat center;height:13px;width:13px;background-position: 0 -26px;}
+/*反馈*/
+.fk_tips{width: 430px !important;height: 300px;background: #fff;}
+.fk_tips .layui-layer-close2{right: -10px !important;top: -10px !important;}
+.fk_tips p{font-size: 24px;color: #000;line-height: 40px;text-align: center;margin-top: 70px;}
+.fk_tips .clos_tips{display: block;width: 370px;height: 50px;line-height: 50px;background: #ff5959;text-align: center;color: #fffefe;font-size: 18px;margin: 40px auto 0;border-radius: 5px;cursor: pointer;}
+.fk_tips .clos_tips:hover{opacity: 0.8;}
+.fk_tips .fedbk{text-align: center;    line-height: 50px;font-size: 24px;margin: 20px auto;}
+.fk_tips input{width: 350px; height: 50px; margin: 0 auto; display: block; background: #f9f9f9; border: 1px solid #e1e1e1; border-radius: 5px; padding: 0 10px; font-size: 16px;}
+
+/*举报*/
+#layer_Reportbox + .layui-layer-setwin .layui-layer-close2{background: url("./close_layer_Report.png") no-repeat center !important; background-position: 0 0; width: 17px; height: 17px; right: 5px; top:10px;}
+.layer_Report{ background:#fff; width: 675px;color: #444; font-size: 14px; padding-bottom: 38px; display: none;}
+.layer_Report .bt{ font-size: 14px; height:65px; line-height: 65px;border-bottom: 1px solid #eee; padding: 0 20px;}
+.layer_Report .input_list{padding: 0 40px; clear:both; padding-top: 10px;}
+.layer_Report .input_list:after{ content: ''; display: block; height: 0px; clear: both; overflow: hidden;}
+.layer_Report .input_list .bt_name{ display: block; float: left; font-size: 16px; line-height: 47px; width: 70px;}
+.layer_Report .input_list .infor{width: 500px; float: left;}
+.layer_Report .input_list input{ height: 17px; line-height: 17px; padding: 15px 10px; border:none;  background: #f6f6f6; width: 480px; border-radius: 2px;}
+.layer_Report .Cont_information .number_tel{width: 305px; float: left;}
+.layer_Report .Cont_information  .inputck{ float: right; width: 100px; line-height: 47px; text-align: right; letter-spacing: 1px; font-size: 14px;}
+.layer_Report .Cont_information  .inputck input{padding: 0; width: 20px; height: 20px;margin-right: 5px;}
+.layer_Report .textarea{height: 100px; background: #f6f6f6; border-radius: 10px; padding: 5px 10px; margin: 0; width: 480pximportant;}
+.layer_Report .textarea textarea{ width: 100%;height: 100px;border: none;outline: none;background: none;box-shadow: none;-webkit-box-shadow: none;-moz-box-shadow: none;overflow-x: hidden;overflow-y: auto;background-color: transparent;font-size: 13px;color: #000; line-height:20px;resize: none;text-align: left!important;display: block;}
+.layer_Report  .text_{ color: #828282; font-size:12px;line-height: 30px; padding-bottom: 20px;}
+.layer_Report  .text_ .tis{ float: left;}
+.layer_Report .text_  .p_lis{float: right;width: 388px;  }
+.layer_Report .text_ .p_lis p{ display: inline-block; vertical-align: middle; margin-right: 30px;}
+.layer_Report .bot_btn{ height: 50px; width: 350px; margin: 0 auto; line-height: 50px;}
+.layer_Report .bot_btn .btn{ float: left; width: 148px; height: 48px; border:1px solid #bbbbbb; text-align: center; margin: 0 4px; cursor: pointer; border-radius: 5px;}
+.layer_Report .bot_btn .btn1{ background: #eee; border-color: #eee;}
+.layer_Report .bot_btn .btn1.on{background: #ff7044; color: #fff;}
+
+#my_user_top .ico_sign_task{background:url("/images/ico_sign_task.png") no-repeat center;display: inline-block;vertical-align: middle; margin: -2px 5px 0 0;}
+#my_user_top  .ico_sign{height:18px;width:20px;background-position: -29px 0;}
+#my_user_top  .ico_task{height:16px;width:14px;background-position: 0 0; margin: -2px 5px 0 0;}
+#my_user_top .Sign_bt ,#my_user_top .task_bt{display: inline-block;vertical-align: middle; position: relative; color: #bfbfbf; font-size: 12px; padding: 0  0 0 8px;}
+#my_user_top .Sign_bt a ,#my_user_top .task_bt a{ color: #bfbfbf; padding: 0;}
+
+/* 签到 */
+#my_user_top .signwarp{width: 478px; height: 163px;background: #fff; box-shadow: 0 0 10px rgba(0,0,0,.4);  position: absolute; z-index: 18; right: 0px;  top: 34px; cursor: default; overflow: hidden; padding: 15px 14px 15px 19px; display: none;}
+#my_user_top .signwarp .timebbox{ float: left; width: 118px; height: 100%; background: #5aacff; text-align: center; color: #fff; overflow: hidden ; border-radius: 2px; font-size: 14px;}
+#my_user_top .signwarp .timebbox .time_date{ height: 40px; line-height: 40px; width: 100%; overflow: hidden;}
+#my_user_top .signwarp .timebbox .time_cent{ width: 57px; height: 57px; margin: 0 auto; color: #000; border-radius: 8px; background: #f3ae19;}
+#my_user_top .signwarp .timebbox .time_cent .day{height: 34px; line-height: 34px; width: 100%; overflow: hidden; padding-top: 3px; font-size: 30px;}
+#my_user_top .signwarp .timebbox .time_cent .week{font-size: 12px; line-height: 18px; height: 18px; width: 100%; overflow: hidden; margin-top: -2px; letter-spacing: 1px;}
+#my_user_top .signwarp .timebbox  .time_text{ line-height: 16px; font-size: 12px; padding-top: 8px; width: 100%;}
+#my_user_top .signwarp .timebbox  .time_text p{display: block; width: 100%; line-height: 16px; }
+#my_user_top .signwarp .text_{ width: 340px; float: left; padding-left: 17px; overflow: hidden;}
+#my_user_top .signwarp .text_ .bt_top{ height: 49px; width: 100%; color: #000; font-size: 18px; overflow: hidden; line-height: 49px;}
+#my_user_top .signwarp .text_ .bt_top p{font-size: 15px; display: inline-block; vertical-align: middle; margin: -5px 0 0 10px;color: #3d3d3d; height: 100%; }
+#my_user_top .signwarp .text_ .bt_top p span{font-size: 34px; padding: 0 2px; }
+#my_user_top .signwarp .text_ .tale{background: #fef4e5; margin: 3px 0 0 0;padding: 0 10px; height: 35px; line-height: 35px; overflow: hidden; color: #664007; font-size: 14px;}
+#my_user_top .signwarp .text_ .tale .every_day{ float: left; letter-spacing: 1px;}
+#my_user_top .signwarp .text_ .tale .exper{float: right;}
+#my_user_top .signwarp .text_  .weekly .bt{height: 40px; padding-top: 8px; line-height: 40px; font-size: 14px; color: #0c0c0c; width: 100%; overflow: hidden;}
+#my_user_top .signwarp .text_  .weekly .starbox{ height: 27px; width: 260px; float: left;position: relative; border-radius: 2px; overflow: hidden; background: #e5e5e5;}
+#my_user_top .signwarp .text_  .weekly .star_line{position: absolute; top:0px; left: 0px; height: 100%; background: #ffc057; }
+#my_user_top .signwarp .text_  .weekly .btn_sign{ float: right; height: 27px; width: 68px; background: #8fc31f; color: #fff; text-align: center; line-height: 27px; border-radius: 2px; cursor: pointer;}
+#my_user_top .signwarp .text_  .weekly .btn_sign.on{background: #a39e9e;}
+#my_user_top .taskwarp{width: 348px; border:1px solid #eee; height: 417px;background: #fff; box-shadow: 0 0 10px rgba(0,0,0,.4);  position: absolute; z-index: 18; right: 0px;  top: 34px; cursor: default; overflow: hidden; display: none; }
+#my_user_top .taskwarp .bttitle{ height: 53px; line-height: 53px;  }
+#my_user_top .taskwarp .bttitle .bt{ color: #545454; font-weight: bold; line-height: 53px; height: 53px; position: relative; float: left; margin: 0 15px;}
+#my_user_top .taskwarp .bttitle .bt::after{content:""; height: 2px; width: 100%; position: absolute; left: 0px;bottom: -1px; background: #ffc057;}
+#my_user_top .taskwarp .list_{ height: 350px; overflow-y: auto; overflow-x: hidden; width: 360px;}
+#my_user_top .taskwarp .list_ .lis{ padding: 0 0px 0 15px; border-top: 1px solid #eee;font-size: 14px;}
+#my_user_top .taskwarp .list_ .lis .lab1{ height: 23px; padding-top: 9px; overflow: hidden;}
+#my_user_top .taskwarp .list_ .lis .lab2{ height: 15px; padding: 12px 0 10px;overflow: hidden;line-height: 15px;}
+#my_user_top .taskwarp .list_ .lis .title_text{ float: left; width: 260px;}
+#my_user_top .taskwarp .list_ .lis .title_text p{max-width: 190px; float: left ; height: 23px; line-height: 23px; color: #0c0c0c; display: block; overflow: hidden; }
+#my_user_top .taskwarp .list_ .lis .title_text p::before{content: ''; width: 5px; height: 5px; display: inline-block; vertical-align: middle; border-radius: 50%; background: #e5e5e5; margin: -2px 8px 0 0;}
+#my_user_top .taskwarp .list_ .lis .title_text .exper{float: right; color: #664007;  max-width: 70px; overflow: hidden; text-align: right; height: 23px; line-height: 23px;}
+#my_user_top .taskwarp .list_ .lis .btn_task{float: left; width: 45px; height: 23px; text-align: center; line-height: 23px;background: #e5e5e5; color: #636363;  margin-left: 15px; }
+#my_user_top .taskwarp .list_ .lis .btn_task.on{cursor: pointer; background: #ffc057; color: #664007;}
+#my_user_top .taskwarp .list_ .lis .starbox{height: 15px; width: 260px; float: left;position: relative; border-radius: 2px; overflow: hidden; background: #e5e5e5;}
+#my_user_top .taskwarp .list_ .lis .star_line{position: absolute; top:0px; left: 0px; height: 100%; background: #ffc057;}
+#my_user_top .taskwarp .list_ .lis .score{color: #0c0c0c; float: left;line-height: 15px; width: 45px; text-align: center; letter-spacing: 1px; margin-left: 15px;}
+.header_wrap{z-index: 7 !important;}
+#my_user_top .Sign_bt:hover + .signwarp ,#my_user_top .signwarp:hover {  display: block!important;}
+#my_user_top .task_bt:hover + .taskwarp ,#my_user_top .taskwarp:hover {  display: block!important;}

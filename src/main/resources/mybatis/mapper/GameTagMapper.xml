@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.igame.mapper.GameTagMapper">
+  <resultMap id="BaseResultMap" type="com.igame.entity.GameTag">
+    <id column="tag_id" jdbcType="INTEGER" property="tagId" />
+    <result column="tag_name" jdbcType="VARCHAR" property="tagName" />
+    <result column="tag_desc" jdbcType="LONGVARCHAR" property="tagDesc" />
+    <result column="head_img" jdbcType="VARCHAR" property="headImg" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_tag
+    where tag_id = #{tagId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.igame.entity.GameTag">
+    insert into tb_tag (tag_id, tag_name, tag_desc, head_img)
+    values (#{tagId,jdbcType=INTEGER}, #{tagName,jdbcType=VARCHAR},
+            #{tagDesc,jdbcType=LONGVARCHAR}, #{headImg,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.igame.entity.GameTag">
+    update tb_tag
+    set tag_name = #{tagName,jdbcType=VARCHAR}
+    set tag_desc = #{tagDesc,jdbcType=LONGVARCHAR}
+    set head_img = #{headImg,jdbcType=VARCHAR}
+    where tag_id = #{tagId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select tag_id, tag_name, tag_desc, head_img
+    from tb_tag
+    where tag_id = #{tagId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select tag_id, tag_name, tag_desc, head_img
+    from tb_tag
+  </select>
+  <select id="selectByGameId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT t.tag_id, t.tag_name, t.tag_desc, t.head_img
+    FROM tb_tag t
+    LEFT JOIN tb_gametag gt
+    ON t.tag_id=gt.tag_id
+    WHERE gt.game_id=#{gameId,jdbcType=INTEGER}
+  </select>
+</mapper>

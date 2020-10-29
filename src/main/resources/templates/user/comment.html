@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <meta name="Keywords" content=""/>
+    <meta name="Description" content=""/>
+    <title>hhh3164-评论</title>
+    <th:block th:include="~{/common/public_common::common_head}" />
+    <link rel="stylesheet" href="" th:href="@{/css/base-201908291.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/lt_base.css}" />
+    <link rel="stylesheet" href="" th:href="@{/css/travel.css}"/>
+</head>
+<body>
+<div class="header_wrap">
+    <div th:replace="~{/common/public_common::header_top}"></div>
+</div>
+<link rel="stylesheet" href="" th:href="@{/css/basis-info-20190829.css}"/>
+<link rel="stylesheet" href="" th:href="@{/css/personal_list.css}"/>
+<div class="cententwrap">
+    <div th:replace="~{user/common/userInfo_common::info-top(topURI='comment')}"></div>
+    <div class="personal_list">
+        <div class="personal_nav">
+            <a href="/msg/"><i class="ico ico2"></i>通知</a>
+            <a class="on" href="javascript:void(0);"><i class="ico ico3"></i>我的评论</a>
+        </div>
+        <div class="my_reply">
+            <div class="pl_lis">
+                <div class="lis" data-ctid="4693149">
+                    <div class="num">1</div>
+                    <a target="_blank" class="bt">《不要吃兔兔》评测：不吃兔兔，就会被兔兔吃</a>
+                    <div class="miaoshu"><div class="tex">嗯哼？ </div></div>
+                    <div class="info">
+                        <p><i></i>2020-10-06 16:28:28</p>
+                        <p><span></span>9</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="" th:src="@{/js/basis-info.js}"></script>
+<script src="" th:src="@{/js/comment.js}"></script>
+<script src="" th:src="@{/js/pagingpage.js}"></script>
+<div th:replace="~{user/common/userInfo_common::fotter}"></div>
+<script src="" th:src="@{/js/base.js}"></script>
+<script src="" th:src="@{/js/user.js}"></script>
+<!--<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>-->
+<div th:replace="~{/common/public_common::login_wrap}"></div>
+</body>
+</html>

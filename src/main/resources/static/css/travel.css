@@ -1,0 +1,298 @@
+.tabwrap .li { float: left; display: block; margin-left: 40px; font-size: 19px; }
+.tabwrap .li.on { color: #1783ba; }
+.tabwrap .btn { width: 133px; height: 52px; text-align: center; line-height: 52px; color: #fff; font-size: 14px; border-radius: 5px; float: right; display: block; background: #3485fb; margin-right: 20px; margin-top: -4px; }
+.tabwrap .btn:hover { opacity: 0.9; }
+.tabwrap .li:hover{color: #1783ba;}
+
+.travel { width: 1000px; height: auto; margin: 12px 0 0px 0; }
+.travel .travel_nav { border: 1px solid #eee; height: 38px; line-height: 38px; background: #fff; border-bottom: none; }
+.travel .travel_nav ul li { float: left; width: 84px; text-align: center; color: #272a34; font-size: 12px; border-right: 1px solid #eee; }
+.travel .travel_nav ul li a {color: #272a34;display: block;}
+.travel .travel_nav ul li:hover { color: #f04029; background: #eee; }
+.travel .travel_nav ul li:hover a { color: #f04029; }
+.travel .travel_nav ul .on { color: #f04029; background: #eee; }
+.travel .travel_nav ul .on a { color: #f04029; }
+.travel .fans_box { border: 1px solid #eee; padding: 50px; }
+.travel .fans_box .fans { width: 835px; margin: 0 auto; overflow: hidden; }
+.travel .fans_box ul { width: 860px; }
+.travel .fans_box ul li { width: 405px; margin: 0 25px 12px 0; float: left; height: 167px; background: #f3f4fa; border-radius: 10px; }
+.travel .fans_box ul li:after { clear: both; content: ''; overflow: hidden; display: block; width: 0; height: 0; }
+.travel .fans_box ul li .name { height: 167px; float: left; width: 110px; padding: 0px 5px; border-right: 1px solid #e5e5e5; }
+.travel .fans_box ul li .name .img { padding-top: 25px; width: 60px; height: 60px; display: block; margin: 0 auto; }
+.travel .fans_box ul li .name .img img { width: 100%; height: 100%; border-right: 20px; }
+.travel .fans_box ul li .name .p { width: 100%; display: block; text-align: center; font-size: 14px; padding-top: 5px; height: 30px; line-height: 30px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #f04029; }
+.travel .fans_box ul li .name .jf_box { height: 15px; line-height: 15px; padding-top: 12px; text-align: center; }
+.travel .fans_box ul li .name .tx_box { display: inline-block; font-weight: normal; font-size: 12px; height: 15px; line-height: 15px; color: #fff; padding: 0 6px; position: relative; vertical-align: middle; margin-top: -4px; border-radius: 5px; box-shadow: 0px 1px 3px rgba(69, 69, 69, 0.25); overflow: visible; background: #878787; }
+.travel .fans_box ul li .name .tx_box i { display: block; background: url(/image/ico_jf.png) no-repeat center; background-position: 0px 0px; width: 15px; height: 11px; position: absolute; left: 0; right: 0; top: -11px; z-index: 1; margin: auto; }
+.travel .fans_box ul li .name .tx_color2 { background: #d1945c; background: -webkit-linear-gradient(top, #ffdeb1 0%, #d1945c 100%); color: #704725; }
+.travel .fans_box ul li .name .tx_color2 i { background-position: 0 -24px; }
+.travel .fans_box ul li .name .tx_color3 { background: #a3a3a3; background: -webkit-linear-gradient(top, #aaaaaa 0%, #f1f1f1 100%); color: #606060; }
+.travel .fans_box ul li .name .tx_color3 i { background-position: 0 -48px; }
+.travel .fans_box ul li .name .tx_color4 { background: #ffd063; background: -webkit-linear-gradient(top, #ffdd8f 0%, #fbb205 100%); color: #896231; }
+.travel .fans_box ul li .name .tx_color4 i { background-position: 0 -71px; }
+.travel .fans_box ul li .text { color: #272a34; height: 167px; position: relative; font-size: 13px; float: left; width: 244px; padding-left: 25px; }
+.travel .fans_box ul li .text .list { max-height: 105px; overflow: hidden; padding-top: 17px; }
+.travel .fans_box ul li .text .list:after { clear: both; content: ''; overflow: hidden; display: block; width: 0; height: 0; }
+.travel .fans_box ul li .text .list span { float: left; display: block; width: 110px; margin-right: 5px; height: 26px; line-height: 26px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.travel .fans_box ul li .text .list span u { text-decoration: none; }
+.travel .fans_box ul li .text .list span .red { color: #f04029; }
+.travel .fans_box ul li .text .follow_lis { height: 31px; width: 240px; line-height: 31px; position: absolute; left: 25px; bottom: 11px; }
+.travel .fans_box ul li .text .follow_lis .most { float: left; width: 150px; height: 100%; overflow: hidden; white-space: nowrap; }
+.travel .fans_box ul li .text .follow_lis .btn { width: 79px; height: 29px; text-align: center; line-height: 29px; border: 1px solid #00a0e9; color: #fff; background: #00a0e9; font-size: 13px; display: block; float: right; border-radius: 3px; }
+.travel .fans_box ul li .text .follow_lis .btn.on { border-color: #e5e5e5; background: #fff; color: #636363; font-size: 12px; }
+
+.posting_travel .layui-layer { background: none; box-shadow: none; }
+.posting_travel .box_travel {display: none;-webkit-background-clip: content;border-radius: 2px;box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.3);/* width: 100%; */max-height: 520px;padding-bottom: 70px;font-size: 14px;background: #fff;border-radius: 5px;position: relative;border: 1px solid #eee;}
+.posting_travel .layui-layer-setwin .layui-layer-close2 { background: url("/image/close_1.png") no-repeat center; width: 17px; height: 17px; position: absolute; right: 0px; top: 0px; cursor: pointer; }
+.posting_travel .layui-layer-setwin .layui-layer-close2:hover { background-position: 0 0; }
+.posting_travel .bt { height: 57px; border-bottom: 1px solid #eee; line-height: 57px; color: #797a7f; font-size: 14px; padding: 0 20px; }
+.posting_travel .bt i { background: url("/image/travel_ico.png") no-repeat center; height: 26px; width: 26px; background-position: 0 -39px; display: inline-block; vertical-align: middle; margin: -5px 8px 0 0; }
+.posting_travel .textarea_box {margin: 17px 27px;padding: 8px 15px;height: 175px;background: #f6f6f6;position: relative;}
+.posting_travel .textarea_box textarea {font-size: 14px;border: none;width: 100%;height: 150px;outline: none;line-height: 20px;background: none;resize: none;color: #797a7f;}
+.posting_travel .textarea_box .text_nuber { color: #797a7f; text-align: right; }
+.posting_travel .img_box {padding: 0 36px;padding-bottom: 25px;max-height: 175px;overflow: hidden;position: relative;}
+.posting_travel .img_box ul:after { clear: both; overflow: hidden; display: block; width: 0; height: 0; content: ''; }
+.posting_travel .img_box ul li {width: 120px;height: 65px;border: 1px solid #eee;float: left;margin: 5px 12px;border-radius: 5px;position: relative;}
+.posting_travel .img_box ul li .img_ { width: 100%; height: 100%; position: relative; overflow: hidden; }
+.posting_travel .img_box ul li img { position: absolute; display: block; left: 0%; top: 0;width:100%; height:100%;object-fit: cover;  }
+.posting_travel .img_box ul li i { background: url("/image/travel_ico.png") no-repeat center; height: 26px; width: 26px; background-position: -50px 0; display: block; position: absolute; right: -13px; top: 50%; margin-top: -13px; cursor: pointer; }
+.posting_travel .img_box ul li i:hover { background-position: -49px -37px; }
+.posting_travel .img_box .tishi{font-size: 12px;color: #f04029;height: 20px;line-height: 20px;position: absolute;right: 47px;bottom: 2px;display: none;}
+.posting_travel .video_ { display: none; }
+.posting_travel .video_ #vido_box { display: none; width: 148px; height: 88px; }
+.posting_travel .video_ #vido_box video { width: 100%; height: 100%; }
+.posting_travel .tab_bottom { position: absolute; width: 100%; left: 0; bottom: 0; border-top: 1px solid #eee; height: 69px; line-height: 69px; color: #797a7f; }
+.posting_travel .tab_bottom input { display: block; width: 100%; height: 100%; position: absolute; left: 0; top: 0px; opacity: 0; filter: alpha(opacity=0); }
+.posting_travel .tab_bottom .ico { background: url("/image/travel_ico.png") no-repeat center; display: inline-block; vertical-align: middle; margin: -4px 8px 0 27px; }
+.posting_travel .tab_bottom .popFace { float: left; cursor: pointer; margin-right: 10px; position: relative; }
+.posting_travel .tab_bottom .popFace i { height: 28px; width: 28px; background-position: 0 -116px; }
+.posting_travel .tab_bottom .popFace .popFaceBox{bottom:70px;  top: auto;}
+.posting_travel .tab_bottom .img_tab { float: left; cursor: pointer; margin-right: 10px; position: relative; }
+.posting_travel .tab_bottom .img_tab i { height: 23px; width: 27px; background-position: 0 -78px; }
+.posting_travel .tab_bottom .video_tab { float: left; cursor: pointer; position: relative; margin-right: 10px; }
+.posting_travel .tab_bottom .video_tab i { height: 25px; width: 25px; background-position: 0 0; }
+.posting_travel .tab_bottom .tab_btn { float: right; }
+.posting_travel .tab_bottom .tab_btn .btn { height: 38px; width: 104px; text-align: center; float: left; background: #e5e5e5; color: #2c2c2c; line-height: 38px; margin: 14px 27px 0 0; border-radius: 3px; }
+.posting_travel .tab_bottom .tab_btn .btn a, .posting_travel .tab_bottom .tab_btn .btn button { color: #2c2c2c; display: block; width: 100%; height: 100%; background: none; border: none; cursor: pointer; }
+.posting_travel .tab_bottom .tab_btn .btn.on { background: #00a0e9; }
+.posting_travel .tab_bottom .tab_btn .btn.on a, .posting_travel .tab_bottom .tab_btn .btn.on button { color: #fff; }
+.posting_travel .video_input {display: none;width: 500px;border-radius: 5px;background: #fff;}
+.posting_travel .video_input .bt { text-align: center; font-size: 16px; color: #0c131b; }
+.posting_travel .video_input .input_box { width: 80%; padding: 0 15px; margin: 20px auto; height: 40px; background:#eee; border-radius: 5px; }
+.posting_travel .video_input .input_box input { border: none; font-size: 14px; line-height: 16px; padding: 12px 0; width: 100%; background: #eee; }
+.posting_travel .video_input .tishi{text-align:center;font-size: 12px;padding-bottom: 18px;color: #f04029;width: 100%;overflow: hidden;height: 20px;line-height: 20px;}
+.posting_travel .video_input .btn_box{border-top:2px solid #eee; height: 50px;}
+.posting_travel .video_input .btn { margin: 0 auto; display: block; height: 50px;text-align: center; line-height: 50px;  border: none; font-size: 16px; color: #434343; cursor: pointer; }
+.posting_travel .video_input .box_1 .btn:nth-child(1) { opacity: 0.8;border-right: 2px solid #eee; width: 49%; }
+.posting_travel .video_input .box_2,.posting_travel .video_input .box_3{display: none;}
+.posting_travel .video_input .box_1 .btn{ width: 50%; float: left; }
+.posting_travel .video_input .btn button { line-height:50px; display: block; color: #434343; width: 100%; height: 100%; background: none; border: none; cursor: pointer; }
+.posting_travel .video_input .line_box{width: 80%; height: 10px; background: #e5e5e5; border-radius: 20px; overflow: hidden; margin: 40px auto; position: relative;}
+.posting_travel .video_input .line_box p{width: 50%; height: 100%; position: absolute; left: 0px; top:0px;background: #80c269;}
+.posting_travel .video_input .line_box2{ height: 40px; line-height: 40px; padding: 50px 0; position: relative; text-align: center;}
+.posting_travel .video_input .line_box2 i{display: inline-block; vertical-align: middle; background: url("/image/icov_success.png") no-repeat center; width: 40px; height: 40px; background-size: 40px auto;}
+.posting_travel .video_input .line_box2 p{display: inline-block; vertical-align: middle;padding: 0 6px;font-size: 16px;}
+
+
+
+.bg_fff { background: #fff; }
+.bg_fff .pages { padding-bottom: 0px; }
+
+.my_travel .M_clear:after { clear: both; content: ''; display: block; overflow: hidden; width: 0; height: 0; }
+.my_travel .travel_warp .travel_item .travel_list { background: #fbfbfd; padding: 0 23px; border: 1px solid #eee; }
+.my_travel .travel_warp .travel_item .travel_list .name_top {height: 61px;width: 100%;padding: 20px 0 15px;}
+.my_travel .travel_warp .travel_item .travel_list .name_top .img { float: left; width: 61px; display: block; height: 61px; }
+.my_travel .travel_warp .travel_item .travel_list .name_top .img img { width: 100%; height: 100%; border-radius: 14px; }
+.my_travel .travel_warp .travel_item .travel_list .name_top .name_text { float: left; padding-left: 15px; width: 400px; }
+.my_travel .travel_warp .travel_item .travel_list .name_top .name_text .name_bt {padding-top: 3px;height: 30px;line-height: 30px;color: #f04029;font-size: 16px;display: inline-block;max-width: 100%;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.my_travel .travel_warp .travel_item .travel_list .name_top .name_text p { height: 28px; line-height: 28px; font-size: 12px; width: 100%; color: #272a34; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.my_travel .travel_warp .travel_item .travel_list .name_top .tab_btn { float: right; text-align: right; max-width: 100px; height: 100%; overflow: hidden; font-size: 12px; }
+.my_travel .travel_warp .travel_item .travel_list .name_top .tab_btn .btn { display: block; margin: 0 auto; text-align: center; width: 79px; height: 29px; border: 1px solid #00a0e9; background: #00a0e9; border-radius: 3px; line-height: 29px; color: #fff; }
+.my_travel .travel_warp .travel_item .travel_list .name_top .tab_btn .btn.on {background: #fff;color: #272a34;border-color: #dcdcdc;}
+.my_travel .travel_warp .travel_item .travel_list .name_top .tab_btn span { display: block; line-height: 30px; height: 30px; overflow: hidden; white-space: nowrap; }
+.my_travel .travel_warp .travel_item .travel_list .publish {border: 1px solid #eee;border-radius: 5px;background: #f4f4f5;padding: 13px 23px;margin-bottom: 15px;}
+.my_travel .travel_warp .travel_item .travel_list .publish .h2 { max-height: 30px; line-height: 30px; font-size: 16px; color: #272a34; font-weight: bold; margin-bottom: 13px; overflow:hidden; }
+.my_travel .travel_warp .travel_item .travel_list .publish .text_ { line-height: 30px; color: #272a34; font-size: 14px; text-align: justify; max-height: 120px; overflow: hidden; position: relative; }
+.my_travel .travel_warp .travel_item .travel_list .publish .text_ img{width: 25px;margin: 0 4px;vertical-align: middle;display: inline-block;margin-top: -5px; }
+.my_travel .travel_warp .travel_item .travel_list .publish .text_ .more { display: block; color: #f04029; text-align: right; position: absolute; right: 0; bottom: 0px; height: 30px; width: 100px; background: #f4f4f5; background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #f4f4f5 30%, #f4f4f5); display: none; }
+.my_travel .travel_warp .travel_item .travel_list .ul_img {width: 530px;max-height: 320px;margin-bottom: 15px;overflow: hidden;}
+.my_travel .travel_warp .travel_item .travel_list .ul_img iframe { width: 100%; border: none; height: 320px; overflow: hidden; }
+.my_travel .travel_warp .travel_item .travel_list .ul_img ul { width: 533px; }
+.my_travel .travel_warp .travel_item .travel_list .ul_img ul:after { content: ''; display: block; height: 0; width: 0; clear: both; overflow: hidden; }
+.my_travel .travel_warp .travel_item .travel_list .ul_img ul li { float: left; width: 175px; height: 105px; margin: 0 2px 2px 0; position: relative; overflow: hidden;text-align:center; line-height:105px; }
+.my_travel .travel_warp .travel_item .travel_list .ul_img ul li img {  display:block;  position:absolute; width:100%; height:100%;object-fit: cover; }
+.my_travel .travel_warp .travel_item .Trcomment .img_name { width: 42px; height: 42px; float: left; }
+.my_travel .travel_warp .travel_item .Trcomment .img_name img { width: 100%; height: 100%; border-radius: 10px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top { background: #fbfbfd; padding: 0 25px; border: 1px solid #eee; border-top: 0px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top {height: 30px;line-height: 30px;padding: 10px 0;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico {background: url("/image/travel_ico2.png") no-repeat center;display: inline-block;vertical-align: middle;margin: 0 8px;cursor: pointer;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico1 {height: 15px;width: 17px;background-position: 0 -23px;/* position: relative; */}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico1.on { background-position: -30px -22px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico2 { height: 15px; width: 16px; background-position: 0 0; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico2.on { background-position: -29px 0; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico3 { height: 16px; width: 16px; background-position: -30px -120px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico4 { height: 18px; width: 20px; background-position: 0 -85px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .ico5 { height: 18px; width: 18px; background-position: 0 -51px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link li.on .ico5{ background-position: -31px -51px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link { float: right; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li { float: left; font-size: 13px; color: #626262; margin-left: 15px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li a { color: #626262; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li.close_lis{color:#969696;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li.close_lis a{color:#969696;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li.close_lis:hover{color:#434343;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li.close_lis a:hover{color:#434343;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li.more_infor a{color:#448aca;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li .ico { margin: -2px 6px 0 0; float:initial; padding:0px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li .Cs_share a{ font-size:13px; background:none; float:initial; padding:0px; margin:0;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li .bshare-custom{padding-top:5px;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li .bshare-custom a{font-size:13px;background:none;float:initial;padding: 0px !important;margin:0;color: #626262!important;text-decoration: none;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link li a i.on {background-position: -30px -51px !important;}
+
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_top .tab_top .tab_link ul li .ico5 { margin-top: -5px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list { border: 1px solid #eee; margin-top: 10px; border-radius: 5px; background: #fff; margin-bottom: 10px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .nav_lisz {height: 50px;padding: 0 25px;line-height: 50px;font-size: 12px;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .nav_lisz a { display: block; width: 65px; text-align: center; float: left; position: relative; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .nav_lisz a:hover { color: #f04029; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .nav_lisz a.on { color: #f04029; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .nav_lisz .a1:after {height: 10px;width: 2px;background: #f04029;display: block;content: '';position: absolute;right: 0;top: 20px;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ { background: #f4f4f5; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list {padding: 15px 25px;border-bottom: 1px solid #e9e9ea;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list:after { clear: both; content: ''; display: block; overflow: hidden; width: 0; height: 0; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ { float: left; padding-left: 15px;width: 890px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .pl_text { font-size: 13px; color: #434343; line-height: 20px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .pl_text .name_box {display: block;float: left;height: 22px;/* max-width: 300px; */overflow: hidden;white-space: nowrap;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .pl_text .name_box a { color: #272a34; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .pl_text .name_box .name { color: #f04029; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .pl_text .name_box .name2 { color: #3485fb; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .pl_text p {float: left;max-width: 890px;text-align:justify;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .pl_text p img{width: 20px;margin: 0 4px;vertical-align: middle;display: inline-block;margin-top: -6px;}
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab { font-size: 12px; padding-top: 5px; width: 100%; height: 15px; line-height: 15px; overflow: hidden; color: #7c7d81; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .fl { float: left; margin-right: 20px; cursor: pointer; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .fr { float: right; text-align: right; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab i { background: url("/image/lt_ico3.png") no-repeat center; display: inline-block; vertical-align: middle; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .zan i { background-position: 0 0; width: 9px; height: 9px; margin: -2px 5px 0 0; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .zan i.on { background-position: -20px 0; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .danger i { background-position: 0 -17px; width: 10px; height: 9px; margin: -2px 5px 0 0; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .danger i.on { background-position: -21px -17px; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .time i { background-position: -31px -68px; width: 12px; height: 12px; margin: -2px 5px 0 0; opacity: 0.7; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .text_ .bq_tab .time u { text-decoration: none; }
+.my_travel .travel_warp .travel_item .Trcomment .Trcomment_list .item_ .list .reply_wrap { padding-top: 10px; display: none; }
+.my_travel .travel_warp .travel_item .Trcomment .more_list { width: 95%; height: 33px; background: #e0e2e9; text-align: center; line-height: 33px; margin: 20px auto; border-radius: 5px; font-size: 12px; }
+.my_travel .travel_warp .travel_item .reply_wrap { width: 100%; }
+.my_travel .travel_warp .travel_item .reply_wrap:after { clear: both; content: ''; display: block; overflow: hidden; width: 0; height: 0; }
+.my_travel .travel_warp .travel_item .reply_wrap .reply_text { float: left; width: 890px; padding-left: 15px; }
+.my_travel .travel_warp .travel_item .reply_wrap .reply_info { height: 35px; line-height: 35px; border: 1px solid #ddd; background: #f4f4f4; display: block; border-radius: 5px; width: 98%; padding: 0 10px; margin: 0 auto; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom {height: 30px;line-height: 30px;padding: 11px 0;color: #7d7d7d;font-size: 13px;}
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .popFace { float: left; position: relative; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .popFace .popFace_bt { padding-right: 25px; cursor: pointer; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .popFace .popFace_bt:before { content: ''; background: url("/image/travel_ico2.png") no-repeat center; height: 19px; width: 19px; background-position: 0 -118px; display: inline-block; vertical-align: middle; margin: -2px 5px 0 0; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .friend { float: left; position: relative; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .friend .friend_bt { padding-right: 25px; cursor: pointer; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .friend .friend_bt:before { content: ''; background: url("/image/travel_ico2.png") no-repeat center; height: 17px; width: 17px; background-position: -31px -86px; display: inline-block; vertical-align: middle; margin: -2px 5px 0 0; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .repl_btn { display: block; float: right; width: 83px; height: 30px; text-align: center; line-height: 30px; background: #0094ff; border-radius: 4px; border: none; font-size: 12px; color: #fff; cursor: pointer; margin-left: 15px; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .repl_btn:hover { opacity: 0.8; }
+.my_travel .travel_warp .travel_item .reply_wrap .btn_bottom .repl_btn.on_ { color: #fff; background: #bebfc2; }
+
+.popFaceBox { display: none; z-index: 999; width: 430px; font-size: 12px; color: #282828; overflow: hidden; box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; top: 35px; position: absolute; background: #f5f5f5; }
+.popFaceBox .popFaceBox_close { background: url(/image/close_1.png) no-repeat; height: 17px; width: 17px; position: absolute; right: 10px; top: 10px; cursor: pointer; }
+.popFaceBox .p_item { min-height: 30px; padding: 0 10px; padding-right: 30px; }
+.popFaceBox .p_item p { display: inline-block; padding: 0 6px; margin: 4px 10px; color: #666; width: auto; text-align: center; line-height: 25px; height: 25px; cursor: pointer; }
+.popFaceBox .p_item p.on { background: #ccc; color: #fff; border-radius: 10px; }
+.popFaceBox .popFace_lis { border-top: 1px solid #eee; }
+.popFaceBox .popFace_lis .face {padding: 10px 30px 16px;overflow: hidden;display: none;}
+.popFaceBox .popFace_lis .face a { margin: 3px 2px; border-radius: 3px; width: 48px; display: block; float: left; text-align: center; color: #666; }
+.popFaceBox .popFace_lis .face img { display: block; margin: 0 auto; width: 40px; height: 40px; }
+.popFaceBox .popFace_lis .face a i { font-size: 10px; line-height: 20px; height: 20px; display: block; overflow: hidden; }
+.popFaceBox .p_item p { display: inline-block; padding: 0 6px; margin: 10px; color: #666; width: auto; text-align: center; line-height: 25px; height: 25px; cursor: pointer; }
+.popFaceBox .p_item p.on { background: #ccc; color: #fff; }
+.popFaceBox { right: 0px; }
+.popFaceBox { left: 0; }
+.popFaceBox .popFace_lis .face0{display:block;}
+
+.order_list { font-size: 13px; color: #1b1b1b; padding: 20px 20px 45px 20px; border-radius: 5px; border: 1px solid #eee; }
+.order_list a { color: #1b1b1b; }
+.order_list .all_order_link { text-align: right; height: 30px; line-height: 30px; }
+.order_list .all_order_link:before { content: ''; display: inline-block; vertical-align: middle; background: url("/image/travel_ico.png") no-repeat center; height: 17px; width: 17px; background-position: -54px -81px; margin: -2px 8px 0 0; }
+.order_list .all_list { font-size: 14px; }
+.order_list .all_top { height: 40px; padding: 22px 0; }
+.order_list .all_top ul { height: 100%; background: #f9fbfe; line-height: 40px; }
+.order_list .li { text-align: center; float: left; height: 100%; margin: 0 5px; overflow: hidden; }
+.order_list .li1 { width: 196px; overflow: hidden; }
+.order_list .li2 { width: 200px; overflow: hidden; }
+.order_list .li3 { width: 170px; overflow: hidden; }
+.order_list .li4 { width: 200px; overflow: hidden; }
+.order_list .li5 { width: 140px; }
+.order_list .li5 .btn { width: 60px; display: block; color: #ff0006; line-height: 20px; text-align: center; margin: 0 auto; margin-top: 0px; }
+.order_list .li5 .btn2 { line-height: 22px; height: 22px; color: #959595; background: #eee; border-radius: 20px; margin-top: -1px; }
+.order_list .li5 .more_order { line-height: 30px; color: #0075a9; display: block; }
+.order_list .item_list ul li { border: 1px solid #eee; border-radius: 5px; margin-bottom: 10px; }
+.order_list .item_list ul li .list { line-height: 50px; padding: 18px 0 12px 0; }
+.order_list .item_list ul li .list:after { display: block; content: ''; overflow: hidden; clear: both; width: 0; height: 0; }
+.order_list .item_list ul li .list .li4 { font-size: 24px; color: #f04029; }
+
+
+.friendBox{position: absolute;width: 422px;height: 265px;background: #f6f6f6;border:1px solid #dcdcdc;left: 50%;margin-left: -211px;display: none;z-index: 1005;top:35px;}
+.friendBox .popup{display:block;width:0;height:0;border-width:0 8px 8px;border-style:solid;border-color:transparent transparent #c7c4c4;position:absolute;top:-8px;left:50%; margin-left: -16px;}
+.friendBox .popup span{  display:block;  width:0;  height:0;  border-width:0 8px 8px;  border-style:solid;  border-color:transparent transparent #fff;  position:absolute;  top:1px;  left:-8px;  }
+.friendBox .box_{ width: 100%; height: 100%; overflow: hidden;}
+.friendBox .friends_lately{padding: 10px 15px; height: 30px; line-height: 30px; overflow: hidden; background: #fff; border-bottom: 1px solid #ededed;}
+.friendBox .friends_lately .bt{ float: left; height: 100%; display: block;}
+.friendBox .friends_lately .a{}
+.friendBox  .a ,.friendBox  .a_{color: #7d7d7d;display: block; float: left; padding: 0 10px;  cursor: pointer;}
+.friendBox  .a:hover ,.friendBox  .a_:hover{color: #000}
+.friendBox .friends_ul{ padding:5px; line-height: 17px; text-transform : uppercase;}
+.friendBox .friends_ul:after{ clear: both; content: ""; display: block; width: 0px; height: 0px; overflow: hidden;}
+.friendBox .friends_ul  .on{color: #000}
+.friendBox .friends_data{ height: 170px; position: relative; overflow-y: auto; overflow-x: hidden;}
+.friendBox .friends_data::-webkit-scrollbar { width: 5px; height: 5px; background: #f6f6f6; border-radius: 10px; }
+.friendBox .friends_data::-webkit-scrollbar-button { width: 0; height: 0; }
+.friendBox .friends_data::-webkit-scrollbar-corner { display: block; }
+.friendBox .friends_data::-webkit-scrollbar-thumb { background-clip: padding-box; background-color: #7d7d7d; border-radius: 10px; }
+.friendBox .friends_data .bt{ height: 20px; line-height: 20px; padding: 0 15px;color: #7d7d7d;border-top: 1px solid #ededed;text-transform : uppercase}
+.friendBox .friends_name_box{ background: #fff; border-top: 1px solid #ededed; padding: 10px 5px; line-height: 25px; height: auto;}
+.friendBox .friends_name_box:after{ clear: both; content: ""; display: block; width: 0px; height: 0px; overflow: hidden;}
+
+ 
+ 
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report{display: inline-block;vertical-align: middle;position: relative;margin-top: -4px;}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show{position:absolute;left: -25px;top:40px;width:331px;height:197px;background:#fff;z-index:1;padding: 15px 17px;cursor:  default;text-align: left; display: none;box-shadow: 0 0px 10px rgba(0, 0, 8, 0.15);}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show .bt{text-align:left;height:  30px;line-height: 30px;}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show .bt i{background: url(/image/travel_ico2.png) no-repeat center;display: inline-block; vertical-align: middle; margin:-2px 5px 0 0;height: 15px; width: 17px; background-position: 0 -23px; position: relative;}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show .close{background: url(/image/close_1.png) no-repeat;height: 17px;width: 17px;position:absolute;right:20px;top:20px;cursor: pointer;}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show  .tishi{position:absolute;left: 30px;top:-10px;width: 0;height: 0;border-bottom: 12px solid #fff;border-left: 10px solid transparent;border-right: 10px solid transparent;}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show .textarea_warp textarea{width: 100%;height: 80px;border: none;outline: none;background: none;box-shadow: none;-webkit-box-shadow: none;-moz-box-shadow: none;overflow-x: hidden;overflow-y: auto;background-color: transparent;font-size: 12px;color: #313131;resize: none;text-align: left!important;display:  block;}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show .textarea_warp{padding: 10px 15px;border: 1px solid #dbdbdb;margin: 10px 0 15px 0;}
+.my_travel .travel_warp .travel_item .Trcomment  .Cs_report_show  .postbtn{width: 82px;height: 34px;background: #4cbcf0;text-align: center;outline: none;border: none;color: #fff;font-size: 14px;cursor: pointer;margin:  0;display:  block;line-height:  34px;}
+
+
+.my_travel .travel_warp .travel_item .travel_list .ul_img ul{cursor:url("https://my.3dmgame.com/images/big.cur"), auto}
+.g-expand-media-box  {background-color: #f2f2f5;width: 530px;}
+.g-expand-media-box .g-view-bar,.g-expand-media-box .bigpic , .g-expand-media-box .slist{ padding:0 20px;background: #f2f2f5;}
+.g-expand-media-box .g-view-bar{height:40px;}
+.g-expand-media-box .bigpic{width:auto;}
+.g-expand-media-box ul li{ float: left; margin-left: 24px; height: 40px; line-height: 40px;}
+.g-expand-media-box ul li a{ color:#333; font-size: 14px;}
+.g-expand-media-box ul li a:hover{color: #f04029}
+.g-expand-media-box ul li a i{background: url("/image/ico_bigimgmore.png") no-repeat center; display: inline-block; vertical-align: middle; margin: -2px 5px 0 0;}
+.g-expand-media-box ul li a i.ico2{width: 22px; height: 22px;background-position: 0 -0px; }
+.g-expand-media-box ul li a i.ico1{width: 22px; height: 22px;background-position: 0 -31px;}
+.g-expand-media-box ul li a i.ico4{width: 27px; height: 27px;background-position: 0 -64px;}
+.g-expand-media-box ul li a i.ico3{width: 27px; height: 27px;background-position: 0 -101px;}
+.g-expand-media-box .bigpic{position:relative;overflow:hidden;vertical-align:middle;text-align:center;padding-bottom:10px}
+.g-expand-media-box .bigpic img{width: 100%; height: auto;}
+.g-expand-media-box .slist{overflow: hidden;width:490px;padding-bottom:10px}
+.g-expand-media-box .slist li{ float: left; width: 54px; height: 54px;}
+.g-expand-media-box .slist li a {display: block; width: 50px; height: 50px; opacity: 0.6; padding: 2px; margin:0 2px;}
+.g-expand-media-box .slist li a.current{border:2px solid #eb7350; opacity: 1;padding:0;}
+.g-expand-media-box .slist li a:hover{border:2px solid #eb7350;opacity: 1;padding:0; }
+.g-expand-media-box .slist li img{ width: 50px; min-height: 50px; height:100%;object-fit: cover;  }
+.g-expand-media-box .leftcursor{cursor:url("https://my.3dmgame.com/images/pic_prev.cur"), auto}
+.g-expand-media-box .smallcursor{cursor:url("https://my.3dmgame.com/images/small.cur"), auto}
+.g-expand-media-box .rightcursor{cursor:url("https://my.3dmgame.com/images/pic_next.cur"), auto}
+.my_travel .travel_warp .travel_item .travel_list .ul_img ul li.ul_img_li4 {width:260px;height:156px;margin:0 5px 5px 0;}
+.my_travel .travel_warp .travel_item .travel_list .ul_img ul li.ul_img_li1 {width:530px;height:320px;margin:0;}
+
+
+ .travel_none{min-height: 425px;padding: 0 20px;position: relative;}
+ .travel_none:after{ content: ''; width: 142px; height: 89px; display: block; position: absolute; background: url("/image/travel_no.png") no-repeat center;    left: 50%; margin-top:-45px; margin-left: -70px; top:50%;}
+

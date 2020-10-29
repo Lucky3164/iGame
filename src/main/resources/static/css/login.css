@@ -1,0 +1,110 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,input,select,textarea,div,table,td,th,tr,dt,dd,dl{margin:0;padding:0;}
+ul,ol{list-style:none;}
+em,i{font-style:normal;}
+table{border-spacing:0;border-collapse:collapse;}
+img{border:none;vertical-align:middle;}
+input,select,button{vertical-align:middle;outline: none;}
+a{text-decoration:none;cursor: pointer;}
+a:hover{text-decoration: none;}
+body{
+font-family:'Microsoft YaHei','Arial','Heiti SC';
+background:#f5f5f5;
+-moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+-khtml-user-select: none;
+user-select: none;
+position: relative;}
+.login_wrap{padding: 0 20px;height: 450px;background: #fff;display: block;max-width:900px;min-width:320px;margin: 0 auto;}
+.login_wrap .title{float: left;width: 100%;text-align: center;line-height: 20px;margin: 20px auto;font-size: 20px;color: #000;}
+.login_wrap .input_wrap{float: left;width: 100%;height: 50px;background: #f9f9f9;border:1px solid #e1e1e1;border-radius: 3px;margin-bottom: 25px;position: relative;}
+.login_wrap .input_wrap input{width: 80%;width: calc(100% - 60px);padding-left:60px; height: 50px;line-height: 50px;border: none;background: none;font-size: 16px;color: #010101;}
+.input_wrap>div{width:50px;height: 26px;border-right:1px solid #c7c7c7;position:absolute;left: 0;top: 12px;z-index: 2;}
+.input_wrap>div i{display: block;background: url(/image/login_ico.png) no-repeat;}
+.login_username .name_ico i{margin-left: 13px;height:26px;width:26px;background-position: 0 -58px;}
+.login_password .password_ico i{margin-left: 15px;height:23px;width:19px;background-position: -31px -59px;}
+.form_login .Tipsbox{display: none; width:80%;position: absolute;height: 30px;line-height: 30px;font-size: 12px;color: #ff5959;left: 20px;}
+.form_login .Tips-name{top: 110px;}
+.form_login .Tips-pswd{top: 190px;}
+.form_login .Tipsbox i{display: block;float: left;background: url(/image/login_ico.png) no-repeat;height:13px;width:13px;background-position: 0 -107px;margin: 8px 8px 0 0;}
+/*auto_login*/
+.auto_login{width: 100%;height: 30px;float: left;margin-top: 6px;position: relative;}
+.auto_login .radiobtn{float: left;margin-top: 2px;}
+.btn_ico_bg{background:#fff url(/image/login_ico.png) no-repeat !important;background-position: -53px -55px !important;}
+.auto_login label{cursor: pointer; float: left; font-size: 14px;color: #909090;margin: 0 10px;}
+
+.auto_login .forget_link{float: left;width: 70px;height: 12px;line-height: 12px;display: block;border-left: 1px solid #7f7f7f;font-size: 14px;color: #909090;text-indent:8px;margin-top: 5px;}
+.auto_login .registered_link{float: right;height: 12px;line-height: 12px;font-size: 14px;color: #5191d2;margin-top: 5px;}
+.form_login .submit{display: block;float: left;width: 100%;height: 50px;line-height: 50px;text-align: center;color: #fff;font-size: 18px;background: #ff5959;text-align: center;border-radius: 4px;margin: 20px 0;}
+.form_login .submit:hover{opacity: 0.9;}
+/*other_login*/
+.other_login{width: 100%;height: 0;float: left;border-top: 1px solid #e1e1e1;border-bottom: 1px solid #fafafa;margin-top: 10px;}
+.other_login p{width: 146px;height: 20px;text-align: center;line-height: 20px;background: #fff;font-size: 18px;color: #787878;margin: -10px auto 0;}
+.other_login_list{display: block;float: left;width: 100%;margin-top: 25px;}
+.other_login_list>div{width: 33.3%;float: left;}
+.other_login_list>div i{display: block;background: url(/image/login_ico.png) no-repeat;height:54px;width:54px;margin: 0 auto;cursor: pointer;}
+.other_login_list>div i:hover{opacity: 0.9;}
+.other_login_list>div.weixin i{background-position: -57px 0;}
+.other_login_list>div.QQ i{background-position: -114px 0;}
+
+/*registered*/
+.registered_wrap{width: 1000px;height: 600px;background: #fff;margin: 50px auto 100px;}
+.registered_wrap .title{width: 100%;float:left;text-align: center;line-height: 36px;margin: 40px auto 30px;font-size: 24px;color: #000;}
+.infowrap{width: 423px;height: auto;float: left;min-height: 410px;margin: 0 0 0 260px;}
+.infowrap .input_lis{width: 100%;height:46px;line-height: 46px;margin-bottom: 26px;position: relative;}
+.infowrap .input_lis>span{display: block;float: left;margin-right: 5px;text-align: right;font-size: 16px;color: #222;width: 80px;letter-spacing: 2px;}
+.infowrap .input_lis input{width: 325px;height: 20px;padding: 12px 5px ;border: 1px solid #e5e5e5;float: left;font-size: 16px;color: #222;}
+.red_c{border: 1px solid #ff5959 !important;}
+.yzm_inp{margin-bottom: 5px !important;}
+.yzm_inp .yzm-c{width: 190px !important;}
+.yzm_inp .time{width: 120px;float:right;background: #ff5959;height: 46px;color: #fefefe;font-size: 16px;text-align: center;cursor: pointer;}
+.yzm_inp .time:hover{opacity: 0.9;}
+.time_bg{background: #323232 !important;}
+.infowrap .tips{font-size: 12px;color: #b5b5b5;line-height: 40px;margin-left: 85px;}
+.infowrap .tips a,.infowrap .tips span{color: #5d9bdb;cursor: pointer;}
+.submit_wrap .submit{display:block;text-align: center;width: 325px;height: 45px;background: #ff5959;line-height: 45px;font-size: 18px;color: #fff;margin: 20px 0 0 85px;}
+.submit_wrap .submit:hover{opacity: 0.9;}
+
+.rule_wrap{width: 325px;height: 20px;line-height: 20px;margin-left: 85px;margin-top: 20px;position: relative;}
+.rule_wrap .btn_ico2{float: left; position: absolute;left: 0; top: 0;
+background:#fff url(/image/login_ico.png) no-repeat;
+ background-position: -53px -55px;
+display: block; float: left; width: 16px; height: 16px; border: 1px solid #b2b2b2; z-index: 4;}
+.rule_wrap input{float: left;margin-left: 5px;}
+.rule_wrap label{float: left; font-size: 12px;color: #b5b5b5;cursor: pointer;margin-left:5px;}
+.rule_wrap>a{float: left; color: #5d9bdb;font-size: 12px;}
+.rule_wrap .tips_login{ display: block;float: right;font-size: 12px;color: #b5b5b5;}
+.rule_wrap .tips_login a,.rule_wrap .tips_login span{color: #5d9bdb;cursor: pointer;}
+
+.tips_lis{position: absolute;right: -20px;top: 0;height: 45px;width: auto;}
+.tips_lis u.dui{display: block;background: url(/image/login_ico.png) no-repeat;height:13px;width:13px;background-position: 0 -89px;margin-top: 15px;}
+.tips_lis p i{display: block;float: left;background: url(/image/login_ico.png) no-repeat;height:13px;width:13px;background-position: 0 -107px;margin-top: 18px;}
+.tips_lis p span.tips_txt{width: 280px;display: block;position: absolute;top: 15px;left:20px ;font-size: 12px;color: #ff5959;line-height: 20px;}
+
+/*反馈*/
+.fk_tips{width: 430px !important;height: 300px;background: #fff;}
+.fk_tips .layui-layer-close2{right: -10px !important;top: -10px !important;}
+.fk_tips p{font-size: 24px;color: #000;line-height: 40px;text-align: center;margin-top: 70px;}
+.fk_tips .clos_tips{display: block;width: 370px;height: 50px;line-height: 50px;background: #ff5959;text-align: center;color: #fffefe;font-size: 18px;margin: 40px auto 0;border-radius: 5px;cursor: pointer;}
+.fk_tips .clos_tips:hover{opacity: 0.8;}
+.fk_tips .fedbk{text-align: center;    line-height: 50px;font-size: 24px;margin: 20px auto;}
+.fk_tips input{width: 350px; height: 50px; margin: 0 auto; display: block; background: #f9f9f9; border: 1px solid #e1e1e1; border-radius: 5px; padding: 0 10px; font-size: 16px;}
+
+.radiobtn { position: relative; width: 14px; height: 14px; }
+.radiobtn input {cursor: pointer; position: absolute; left: 0; top: 0; z-index: 3; opacity: 0; filter: alpha(opacity=0.5); }
+.radiobtn span { display: block; width: 14px; height: 14px; border: 1px solid #b2b2b2; position: absolute; z-index: 2; left: 0; top: 0; }
+.radiobtn span.inpbg { display: block; background: url(/image/login_ico.png) no-repeat center; height: 14px; width: 14px; background-position: -54px -56px; }
+.input_lis #areacode{
+	width: 338px;
+    padding: 0 5px;
+	    height: 46px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    float: left;
+    font-size: 16px;
+    color: #222;
+}
+.alertmsg {margin: 50px auto;width: 300px;height: 100px;line-height: 100px;text-align: center;display: block;background: #f9f9f9;border: 1px solid #e1e1e1;border-radius: 5px;padding: 0 10px;font-size: 16px;overflow: hidden;}
+.alertbtn_bottom{width: 370px;margin-top: -40px;}
+.alert_agray{display: inline-block;width: 100px;height: 50px;line-height: 50px;background-color: #e1e1e1;text-align: center;color: #fff;font-size: 18px;margin: 20px 120px 0 50px;border-radius: 5px;cursor: pointer;}
+.alert_btnblue{display: inline-block;width: 100px;height: 50px;line-height: 50px;background: #ff5959;text-align: center;color: #fffefe;font-size: 18px;margin: 40px auto 0;border-radius: 5px;cursor: pointer;}
